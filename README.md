@@ -4,7 +4,11 @@
 
 [Public Site](https://redpluglab.github.io/tellama/) · [Privacy Policy](https://redpluglab.github.io/tellama/privacy/)
 
-Tellama is built for people who want serious AI on a phone without turning every prompt into a cloud dependency. It brings local GGUF model execution, private chat, persistent user-approved Memory, device safety checks, and developer-friendly API serving into one polished Android experience.
+Tellama turns an Android phone into a private AI workstation.
+
+It is built for people who want serious AI on a phone without turning every prompt into a cloud dependency. Tellama brings local GGUF model execution, private chat, persistent user-approved Memory, voice input, phone-aware model management, runtime safety checks, and developer-friendly API serving into one polished Android experience.
+
+If you have ever wanted an AI assistant that can run on your own device, remember useful context, serve responses to your own tools, and respect the limits of mobile hardware, Tellama is built for that world.
 
 The app is designed for three kinds of users:
 
@@ -14,11 +18,40 @@ The app is designed for three kinds of users:
 
 This public repository contains product pages, privacy documentation, and public release information. The commercial Android source code is maintained privately by redplug, Inc.
 
+## Product Promise
+
+Tellama is not trying to be another cloud chat skin. It is a mobile AI control center.
+
+With Tellama, a user can:
+
+- Run compatible local LLMs directly on Android.
+- Build a private assistant with long-term, user-approved Memory.
+- Import or download phone-appropriate GGUF models.
+- Check whether a model is realistic for the current device before loading it.
+- Use the phone as a local API endpoint for scripts, desktop apps, and local agents.
+- Keep Local Only mode as the default, then opt into LAN serving only when needed.
+- Speak instead of typing, using the Android system speech service.
+- Work across multiple languages with the app, voice input, and default AI response language aligned.
+
 ## Why Tellama Feels Different
 
 Most mobile AI apps are either cloud chat wrappers or experimental model launchers. Tellama is different: it treats the phone as a real AI runtime.
 
 It is not just a chat box. It is a local model manager, runtime safety layer, long-term Memory system, developer API bridge, and privacy-forward Android app wrapped into one product.
+
+That means Tellama is designed around the full workflow: choose a model, verify device readiness, chat locally, save important context, serve the model to trusted tools, review failure diagnostics, and stay in control of data.
+
+## Feature Pillars
+
+| Pillar | What it means for users |
+|---|---|
+| Private local AI | Run compatible models on device instead of relying on a Tellama cloud account |
+| Long-term Memory | Save facts, preferences, summaries, and project notes that make the assistant more useful over time |
+| Developer API mode | Turn the phone into an Ollama/OpenAI-compatible endpoint for trusted local workflows |
+| Mobile safety | Check memory, storage, battery, and thermal conditions before pushing the device too hard |
+| Phone-first model flow | Hide oversized models and guide users toward realistic local serving |
+| Multilingual AI | Align UI language, voice input, and default assistant response language |
+| Commercial polish | Encrypted local data, redacted support reports, foreground-service transparency, and Play-ready privacy documentation |
 
 ## Core Capabilities
 
@@ -41,6 +74,8 @@ The model flow includes:
 - Phone-first model size filtering.
 - Preflight checks before loading.
 
+The goal is simple: help users avoid wasting time on models that are unrealistic for their device, while making supported local models easier to try.
+
 ### Long-Term Memory
 
 Tellama includes user-controlled Memory so the assistant can carry useful context forward across conversations.
@@ -54,6 +89,13 @@ Memory is designed around consent and control:
 - The assistant uses Memory only as part of the local prompt context.
 
 This makes Tellama feel less like a blank chatbot and more like a personal workspace that can remember what matters.
+
+Examples of useful Memory:
+
+- "I prefer concise Korean answers."
+- "My current project is an Android local LLM app."
+- "Use polite but direct wording for release notes."
+- "Remember that my test device has limited RAM."
 
 ### Local and Remote API Serving
 
@@ -71,6 +113,8 @@ The server is designed for developers who want to connect their own tools to a m
 
 In practice, this means a phone can become a private LLM endpoint for scripts, desktop tools, local agents, or experiments on the same trusted network.
 
+This is one of Tellama's strongest ideas: the Android device is not only a chat UI. It can become infrastructure.
+
 ### Runtime Safety and Preflight Checks
 
 Local AI on phones needs guardrails. Tellama checks device conditions before and during runtime so users have a better chance of choosing a model that fits their device.
@@ -85,6 +129,8 @@ Safety features include:
 - Load attempt tracking.
 - Redacted support reports.
 
+Instead of failing silently or forcing users to guess, Tellama tries to explain what is wrong and what the user can do next.
+
 ### Privacy-Forward Data Model
 
 Tellama is built so prompts, responses, chat history, Memory items, API keys, and diagnostics stay on the user's device unless the user explicitly chooses otherwise.
@@ -97,6 +143,8 @@ Privacy and security choices include:
 - API keys stored as hashes, not plaintext.
 - Redacted support reports.
 - Clear public Data safety and privacy documentation.
+
+Tellama is designed for users who want practical privacy, not vague privacy slogans.
 
 ### Voice Input
 
@@ -126,6 +174,30 @@ Current language coverage includes:
 
 When the user selects a language, Tellama uses it not only for the UI but also as the default LLM response language, unless the user explicitly asks for another language.
 
+## What You Can Build With It
+
+Tellama is useful as an app, but it is also useful as a small local AI platform.
+
+### A Private Daily Assistant
+
+Use Tellama for local conversations, recurring personal preferences, writing style, project notes, and practical long-term context.
+
+### A Mobile LLM Server
+
+Start a local model on the phone and connect trusted tools to the local API server. Keep it on localhost, or explicitly enable LAN mode when a trusted network workflow needs it.
+
+### A Developer Test Bench
+
+Use Android hardware as a real-world test environment for mobile LLM behavior: model size, load reliability, memory pressure, battery state, thermal behavior, and streaming UX.
+
+### A Portable Knowledge Companion
+
+Keep project notes and user-approved Memory close to the model so the assistant can answer with more continuity across sessions.
+
+### A Privacy-Conscious Chat Tool
+
+Use local execution when you want more control over where prompts and responses are processed.
+
 ## Feature Map
 
 | Area | What Tellama Provides |
@@ -140,6 +212,20 @@ When the user selects a language, Tellama uses it not only for the UI but also a
 | Privacy | Encrypted local data, no account required, redacted support reports |
 | Voice | Optional system speech recognition integration |
 | Languages | UI, voice, and default AI response language alignment |
+
+## Designed for Trust
+
+Tellama is built with commercial release expectations in mind:
+
+- Explicit foreground-service behavior for long-running model downloads and API serving.
+- Public privacy policy and Data safety documentation.
+- No account required for local use.
+- Local Only API serving by default.
+- LAN serving requires deliberate user action.
+- API keys are hashed and shown only once.
+- Support reports redact sensitive values before sharing.
+- Android backup is disabled for app data.
+- Model downloads are user initiated.
 
 ## Example Use Cases
 
@@ -159,39 +245,53 @@ Test model sizes, runtime behavior, generation settings, preflight outcomes, and
 
 Use local model execution for conversations where users want more control over where prompts and responses are processed.
 
+## Who It Is For
+
+Tellama is especially useful for:
+
+- Android power users who want local AI without running a desktop server.
+- Developers building local-agent or local-tool workflows.
+- Privacy-conscious users who prefer on-device processing where practical.
+- Researchers and hobbyists exploring mobile LLM constraints.
+- Writers, builders, and makers who want a remembered workspace instead of a forgetful chat screen.
+
+## Who It Is Not For
+
+Tellama is not positioned as a medical, legal, financial, emergency, or child-directed product. Local models can be useful, but users should treat model output as AI-generated assistance, not professional advice.
+
 ## Product Positioning
 
 ### English
 
-Tellama is a premium Android app for private local AI. It combines local model execution, long-term Memory, voice input, model safety checks, and optional API serving in a refined mobile experience.
+Tellama is a premium Android app for private local AI. It combines local model execution, long-term Memory, voice input, model safety checks, multilingual response control, and optional API serving in a refined mobile experience.
 
 ### 한국어
 
-Tellama는 Android 기기에서 로컬 AI를 실행하기 위한 프리미엄 앱입니다. 로컬 LLM 실행, 장기기억 Memory, 음성 입력, 모델 안전 점검, 선택형 API 서빙을 하나의 완성도 높은 모바일 경험으로 제공합니다.
+Tellama는 Android 기기에서 로컬 AI를 실행하기 위한 프리미엄 앱입니다. 로컬 LLM 실행, 장기기억 Memory, 음성 입력, 모델 안전 점검, 다국어 응답 제어, 선택형 API 서빙을 하나의 완성도 높은 모바일 경험으로 제공합니다.
 
 ### 日本語
 
-Tellama は、Android でプライベートなローカル AI を扱うためのプレミアムアプリです。ローカル LLM 実行、長期 Memory、音声入力、モデル安全チェック、任意の API サービングを洗練されたモバイル体験としてまとめます。
+Tellama は、Android でプライベートなローカル AI を扱うためのプレミアムアプリです。ローカル LLM 実行、長期 Memory、音声入力、モデル安全チェック、多言語応答制御、任意の API サービングを洗練されたモバイル体験としてまとめます。
 
 ### 中文
 
-Tellama 是一款面向 Android 的高品质本地 AI 应用。它整合了本地 LLM 运行、长期 Memory、语音输入、模型安全检查，以及可选的 API 服务能力。
+Tellama 是一款面向 Android 的高品质本地 AI 应用。它整合了本地 LLM 运行、长期 Memory、语音输入、模型安全检查、多语言回复控制，以及可选的 API 服务能力。
 
 ### Español
 
-Tellama es una aplicación premium de Android para IA local y privada. Combina ejecución local de modelos, Memory a largo plazo, entrada de voz, comprobaciones de seguridad y API local opcional.
+Tellama es una aplicación premium de Android para IA local y privada. Combina ejecución local de modelos, Memory a largo plazo, entrada de voz, control multilingüe de respuestas, comprobaciones de seguridad y API local opcional.
 
 ### Français
 
-Tellama est une application Android premium pour l'IA locale et privée. Elle réunit exécution locale de modèles, Memory à long terme, saisie vocale, contrôles de sécurité et API locale optionnelle.
+Tellama est une application Android premium pour l'IA locale et privée. Elle réunit exécution locale de modèles, Memory à long terme, saisie vocale, contrôle multilingue des réponses, contrôles de sécurité et API locale optionnelle.
 
 ### Deutsch
 
-Tellama ist eine hochwertige Android-App für private lokale KI. Sie verbindet lokale Modellausführung, langfristige Memory, Spracheingabe, Sicherheitsprüfungen und optionales API-Serving.
+Tellama ist eine hochwertige Android-App für private lokale KI. Sie verbindet lokale Modellausführung, langfristige Memory, Spracheingabe, mehrsprachige Antwortsteuerung, Sicherheitsprüfungen und optionales API-Serving.
 
 ### Português
 
-Tellama é um app Android premium para IA local e privada. Ele combina execução local de modelos, Memory de longo prazo, entrada por voz, verificações de segurança e API local opcional.
+Tellama é um app Android premium para IA local e privada. Ele combina execução local de modelos, Memory de longo prazo, entrada por voz, controle multilíngue de respostas, verificações de segurança e API local opcional.
 
 ## Privacy
 
