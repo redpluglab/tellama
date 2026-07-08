@@ -32,6 +32,7 @@ With Tellama, a user can:
 - Keep Local Only mode as the default, then opt into LAN serving only when needed.
 - Speak instead of typing, using the Android system speech service.
 - Work across multiple languages with the app, voice input, and default AI response language aligned.
+- Keep a local optional profile and request product updates without making login a gate.
 
 ## Why Tellama Feels Different
 
@@ -51,6 +52,7 @@ That means Tellama is designed around the full workflow: choose a model, verify 
 | Mobile safety | Check memory, storage, battery, and thermal conditions before pushing the device too hard |
 | Phone-first model flow | Hide oversized models and guide users toward realistic local serving |
 | Multilingual AI | Align UI language, voice input, and default assistant response language |
+| Optional profile | Add a local profile photo and contact email only if the user wants product updates |
 | Commercial polish | Encrypted local data, redacted support reports, foreground-service transparency, and Play-ready privacy documentation |
 
 ## Core Capabilities
@@ -138,6 +140,7 @@ Tellama is built so prompts, responses, chat history, Memory items, API keys, an
 Privacy and security choices include:
 
 - No Tellama account required for local use.
+- Optional local profile; email update opt-in is user initiated.
 - Encrypted local database.
 - Android backup disabled for app data.
 - API keys stored as hashes, not plaintext.
@@ -209,7 +212,7 @@ Use local execution when you want more control over where prompts and responses 
 | API serving | Ollama/OpenAI-compatible local server with optional LAN access |
 | Security | API keys, rate limiting, local-only default, hashed secrets |
 | Safety | Preflight checks, thermal/battery/storage awareness, Safe Mode |
-| Privacy | Encrypted local data, no account required, redacted support reports |
+| Privacy | Encrypted local data, no account required, optional local profile, redacted support reports |
 | Voice | Optional system speech recognition integration |
 | Languages | UI, voice, and default AI response language alignment |
 

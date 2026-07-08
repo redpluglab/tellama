@@ -178,12 +178,16 @@
 
     <section class="content">
       <div class="summary">
-        <strong>Plain-language summary:</strong> Tellama runs local AI models on your phone. It does not send prompts or responses to Tellama-controlled cloud servers. Optional features such as model downloads, Android system speech recognition, support report sharing, and local API serving may involve user-directed network or sharing activity.
+        <strong>Plain-language summary:</strong> Tellama runs local AI models on your phone. It does not send prompts or responses to Tellama-controlled cloud servers. Optional features such as model downloads, Android system speech recognition, profile update requests, support report sharing, and local API serving may involve user-directed network or sharing activity.
       </div>
 
   <h2>Data We Store on Your Device</h2>
-  <p>Tellama stores chat sessions, prompts, responses, user-approved Memory items, installed or imported model metadata and checksums, local API client records, failure records, diagnostics, and user settings locally on your Android device.</p>
+  <p>Tellama stores chat sessions, prompts, responses, user-approved Memory items, installed or imported model metadata and checksums, local API client records, failure records, diagnostics, user settings, and optional local profile details locally on your Android device.</p>
   <p>API keys are stored as SHA-256 hashes; the raw key is shown only once. Tellama uses an encrypted local database. Android backup is disabled for app data.</p>
+
+  <h2>Optional Profile and Product Updates</h2>
+  <p>Tellama does not require an account for local use. You may optionally add a local display name, contact email, and profile photo in Settings. These profile details stay on your device unless you choose to share them.</p>
+  <p>If you enable product updates and tap "Request updates," Tellama opens your email app with a prefilled message to redplug. Sending that email is optional and user-initiated. redplug may use the email address you send to provide Tellama product updates, release information, account-related announcements, and future pricing or subscription information. You can request removal from update communications by contacting the address below.</p>
 
   <h2>Voice Input</h2>
   <p>Tellama requests microphone permission only when you use voice input. Voice recognition is handled by the Android system speech service installed on your device. Tellama does not store raw audio recordings. Recognized text is stored only if you send it as a chat message.</p>
@@ -191,17 +195,17 @@
   <h2>Network Use</h2>
   <p>Tellama does not require an account for local use. Tellama uses network access for user-initiated model downloads from the selected model provider over HTTPS and for optional local API serving.</p>
   <p>The API server is off by default. Local Only mode binds to <code>127.0.0.1</code>. LAN mode requires explicit user action and API key authentication. Local LAN API traffic is not TLS-encrypted, so enable LAN mode only on networks you trust.</p>
-  <p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers.</p>
+  <p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers. Tellama does not automatically upload your optional local profile or profile photo.</p>
 
   <h2>Support Reports</h2>
   <p>Support reports are generated only when you choose to view or share them. Tellama redacts bearer tokens, API keys, and local filesystem paths before presenting support data.</p>
 
   <h2>Data Sharing</h2>
   <p>Tellama does not sell user data and does not share user data with advertising networks.</p>
-  <p>Data may leave the app only when you explicitly share a redacted support report, download a model file from a third-party model host, use Android system speech recognition, or enable local API serving and connect your own local clients to the app.</p>
+  <p>Data may leave the app only when you explicitly send a Tellama update request through your email app, share a redacted support report, download a model file from a third-party model host, use Android system speech recognition, or enable local API serving and connect your own local clients to the app.</p>
 
   <h2>Data Deletion</h2>
-  <p>You can delete local Tellama data by resetting Memory in Tellama Settings, clearing Tellama storage in Android system settings, or uninstalling Tellama. Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete.</p>
+  <p>You can delete local Tellama data by clearing or editing your optional profile, resetting Memory in Tellama Settings, clearing Tellama storage in Android system settings, or uninstalling Tellama. Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete. If you previously sent an update opt-in email to redplug, contact the email address below to request removal from the update list.</p>
 
   <h2>Children</h2>
   <p>Tellama is intended for developers, local AI users, and general productivity use. It is not directed to children.</p>
