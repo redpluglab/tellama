@@ -4,36 +4,182 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tellama Privacy Policy</title>
+  <meta name="description" content="Tellama privacy policy for the Android app published by redplug.">
   <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --ink: #17202f;
+      --muted: #5d6a7c;
+      --line: #dde3ea;
+      --brand: #0f766e;
+      --brand-ink: #0b4f4a;
+      --soft: #e8f5f3;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      color: #18212f;
+      color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
       margin: 0;
-      background: #f7f8fb;
+      background: var(--bg);
     }
     main {
-      max-width: 760px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 48px 20px 72px;
-      background: #ffffff;
+      padding: 56px 22px 80px;
     }
     h1, h2 {
       line-height: 1.2;
+    }
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      margin: 0 0 12px;
+      letter-spacing: 0;
+    }
+    h2 {
+      border-top: 1px solid var(--line);
+      margin: 36px 0 12px;
+      padding-top: 26px;
+      font-size: 1.25rem;
+    }
+    p {
+      margin: 0 0 14px;
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 22px;
+    }
+    a {
+      color: var(--brand-ink);
+      font-weight: 600;
     }
     code {
       background: #eef1f5;
       border-radius: 4px;
       padding: 2px 4px;
     }
+    .shell {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 24px 80px rgba(23, 32, 47, 0.08);
+      overflow: hidden;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0f766e 0%, #153344 100%);
+      color: #ffffff;
+      padding: 42px;
+    }
+    .brand {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 38px;
+    }
+    .mark {
+      align-items: center;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      display: inline-flex;
+      font-weight: 800;
+      height: 42px;
+      justify-content: center;
+      width: 42px;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .brand-name {
+      font-weight: 800;
+    }
+    .publisher {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.9rem;
+    }
+    .lead {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.08rem;
+      max-width: 680px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.9);
+      padding: 7px 12px;
+      font-size: 0.9rem;
+    }
+    .content {
+      padding: 38px 42px 46px;
+    }
+    .summary {
+      background: var(--soft);
+      border: 1px solid #c7e6e1;
+      border-radius: 14px;
+      color: var(--brand-ink);
+      margin-bottom: 34px;
+      padding: 18px 20px;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .footer {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 30px;
+    }
+    @media (max-width: 680px) {
+      main {
+        padding: 0;
+      }
+      .shell {
+        border: 0;
+        border-radius: 0;
+      }
+      .hero,
+      .content {
+        padding: 28px 20px;
+      }
+    }
   </style>
 </head>
 <body>
 <main>
-  <h1>Tellama Privacy Policy</h1>
-  <p><strong>Effective date:</strong> July 8, 2026</p>
-  <p>Tellama is a local AI app for Android. It lets you import or download supported local model files, chat with models on your device, save user-approved Memory items, and optionally run a local API server.</p>
-  <p>This policy applies to the Tellama Android app published as <code>com.tellama.app</code>.</p>
+  <article class="shell">
+    <header class="hero">
+      <div class="brand">
+        <span class="mark">T</span>
+        <span class="brand-text">
+          <span class="brand-name">Tellama</span>
+          <span class="publisher">Published by redplug, Inc.</span>
+        </span>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="lead">Tellama is built around local AI on Android. Prompts, responses, chat history, Memory items, API keys, and diagnostics are designed to stay on the user's device unless the user explicitly chooses otherwise.</p>
+      <div class="meta">
+        <span class="pill">Effective July 8, 2026</span>
+        <span class="pill">Android package: com.tellama.app</span>
+        <span class="pill">No Tellama account required</span>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="summary">
+        <strong>Plain-language summary:</strong> Tellama runs local AI models on your phone. It does not send prompts or responses to Tellama-controlled cloud servers. Optional features such as model downloads, Android system speech recognition, support report sharing, and local API serving may involve user-directed network or sharing activity.
+      </div>
 
   <h2>Data We Store on Your Device</h2>
   <p>Tellama stores chat sessions, prompts, responses, user-approved Memory items, installed or imported model metadata and checksums, local API client records, failure records, diagnostics, and user settings locally on your Android device.</p>
@@ -64,7 +210,10 @@
   <p>If this policy changes, the updated version will be published at <a href="https://redpluglab.github.io/tellama/privacy/">https://redpluglab.github.io/tellama/privacy/</a>.</p>
 
   <h2>Contact</h2>
-  <p>For privacy questions, contact <a href="mailto:support@tellama.app">support@tellama.app</a>.</p>
+  <p>For privacy questions, contact <a href="mailto:challychoi@gmail.com">challychoi@gmail.com</a>.</p>
+      <p class="footer">This page is hosted publicly for Google Play and user transparency.</p>
+    </section>
+  </article>
 </main>
 </body>
 </html>
