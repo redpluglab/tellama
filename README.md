@@ -1,15 +1,115 @@
-# Tellama
+<p align="center">
+  <img src="assets/tellama-icon.png" width="148" alt="Tellama app icon" />
+</p>
 
-**Private local AI for Android.**  
-Turn your phone into a personal AI workspace with local LLMs, long-term memory, voice input, model downloads, and an Ollama/OpenAI-compatible API server.
+<h1 align="center">Tellama</h1>
 
-[![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#)
-[![Local First](https://img.shields.io/badge/Local--first-Private_AI-111827?style=for-the-badge)](#)
-[![GGUF](https://img.shields.io/badge/Models-GGUF-2563EB?style=for-the-badge)](#)
-[![API](https://img.shields.io/badge/API-Ollama_%2F_OpenAI_compatible-7C3AED?style=for-the-badge)](#)
-[![Privacy](https://img.shields.io/badge/Privacy-No_account_required-059669?style=for-the-badge)](#)
+<p align="center">
+  <strong>Private local AI for Android.</strong><br />
+  Turn your phone into a personal AI workspace with local LLMs, long-term memory, voice input, model downloads, and an Ollama/OpenAI-compatible API server.
+</p>
 
-[Download test APK](https://github.com/redpluglab/tellama/releases/latest) · [Product page](https://redpluglab.github.io/tellama/) · [Privacy policy](https://redpluglab.github.io/tellama/privacy/)
+<p align="center">
+  <a href="https://github.com/redpluglab/tellama/releases/latest"><strong>Download test APK</strong></a>
+  ·
+  <a href="https://redpluglab.github.io/tellama/">Product page</a>
+  ·
+  <a href="https://redpluglab.github.io/tellama/privacy/">Privacy policy</a>
+</p>
+
+<p align="center">
+  <a href="#english">English</a>
+  ·
+  <a href="#korean">한국어</a>
+  ·
+  <a href="#chinese-simplified">简体中文</a>
+  ·
+  <a href="#japanese">日本語</a>
+  ·
+  <a href="#german">Deutsch</a>
+  ·
+  <a href="#french">Français</a>
+  ·
+  <a href="#spanish">Español</a>
+  ·
+  <a href="#portuguese">Português</a>
+  ·
+  <a href="#indonesian">Indonesia</a>
+  ·
+  <a href="#hindi">हिन्दी</a>
+</p>
+
+<p align="center">
+  <img alt="Android" src="https://img.shields.io/badge/Android-Local_AI-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img alt="Local first" src="https://img.shields.io/badge/Local--first-Private_Workspace-111827?style=for-the-badge" />
+  <img alt="GGUF" src="https://img.shields.io/badge/GGUF-Model_Ready-2563EB?style=for-the-badge" />
+  <img alt="API" src="https://img.shields.io/badge/API-Ollama_%2F_OpenAI-7C3AED?style=for-the-badge" />
+  <img alt="Privacy" src="https://img.shields.io/badge/Privacy-No_Forced_Login-059669?style=for-the-badge" />
+</p>
+
+---
+
+## Global Snapshot
+
+<a id="english"></a>
+
+### English
+
+Tellama is a private local AI workspace for Android. It lets you run compatible GGUF models on your phone, manage memory, use voice input, download mobile-friendly models, and expose an Ollama/OpenAI-compatible local API when needed.
+
+<a id="korean"></a>
+
+### 한국어
+
+Tellama는 Android 스마트폰에서 로컬 LLM을 실행하는 개인 AI 워크스페이스입니다. 장기기억, 음성 입력, 모바일 친화 모델 다운로드, Ollama/OpenAI 호환 로컬 API 서버까지 한 앱 안에서 제공합니다.
+
+<a id="chinese-simplified"></a>
+
+### 简体中文
+
+Tellama 是一款面向 Android 的私人本地 AI 工作空间。你可以在手机上运行兼容的 GGUF 模型，管理长期记忆，使用语音输入，下载适合移动设备的模型，并在需要时启用兼容 Ollama/OpenAI 的本地 API。
+
+<a id="japanese"></a>
+
+### 日本語
+
+Tellama は Android 向けのプライベートなローカル AI ワークスペースです。対応する GGUF モデルの実行、長期メモリ、音声入力、モバイル向けモデルのダウンロード、Ollama/OpenAI 互換のローカル API サーバーを利用できます。
+
+<a id="german"></a>
+
+### Deutsch
+
+Tellama ist ein privater lokaler KI-Arbeitsbereich für Android. Die App unterstützt kompatible GGUF-Modelle auf dem Smartphone, Langzeitgedächtnis, Spracheingabe, mobile Modell-Downloads und bei Bedarf einen Ollama/OpenAI-kompatiblen lokalen API-Server.
+
+<a id="french"></a>
+
+### Français
+
+Tellama est un espace de travail d'IA locale privée pour Android. L'application permet d'exécuter des modèles GGUF compatibles sur le téléphone, d'utiliser une mémoire longue durée, la saisie vocale, des téléchargements de modèles adaptés au mobile et une API locale compatible Ollama/OpenAI.
+
+<a id="spanish"></a>
+
+### Español
+
+Tellama es un espacio de trabajo de IA local y privada para Android. Permite ejecutar modelos GGUF compatibles en el teléfono, usar memoria a largo plazo, entrada por voz, descargas de modelos adecuados para móviles y una API local compatible con Ollama/OpenAI.
+
+<a id="portuguese"></a>
+
+### Português
+
+Tellama é um espaço de trabalho de IA local e privada para Android. Ele permite executar modelos GGUF compatíveis no celular, usar memória de longo prazo, entrada por voz, downloads de modelos adequados para dispositivos móveis e uma API local compatível com Ollama/OpenAI.
+
+<a id="indonesian"></a>
+
+### Indonesia
+
+Tellama adalah ruang kerja AI lokal dan privat untuk Android. Aplikasi ini mendukung model GGUF yang kompatibel di ponsel, memori jangka panjang, input suara, unduhan model yang cocok untuk perangkat mobile, dan API lokal kompatibel Ollama/OpenAI.
+
+<a id="hindi"></a>
+
+### हिन्दी
+
+Tellama Android के लिए एक निजी लोकल AI वर्कस्पेस है। यह फोन पर compatible GGUF models चलाने, long-term memory, voice input, mobile-friendly model downloads और जरूरत पड़ने पर Ollama/OpenAI-compatible local API server का उपयोग करने में मदद करता है।
 
 ---
 
@@ -221,39 +321,6 @@ It does not contain:
 - Proprietary implementation details.
 
 The Android source code is maintained in a private redplug, Inc. repository.
-
----
-
-## 한국어 소개
-
-Tellama는 Android 스마트폰에서 로컬 LLM을 실행하고, 장기기억과 음성 입력, 모델 다운로드, Ollama/OpenAI 호환 API 서버까지 제공하는 개인 AI 워크스페이스입니다.
-
-핵심 사용성은 간단합니다.
-
-- 계정 없이 로컬 AI 사용.
-- 휴대폰에 맞는 GGUF 모델 다운로드 또는 가져오기.
-- 중요한 정보는 사용자가 승인한 장기기억으로 저장.
-- 필요할 때 스마트폰을 로컬 AI API 서버처럼 활용.
-- 안전 모드와 진단으로 모델 로딩 문제를 이해하기 쉽게 안내.
-- 앱 언어 설정에 따라 AI 기본 응답 언어도 자연스럽게 맞춤.
-
-Tellama는 “폰에서 돌아가는 장난감 데모”가 아니라, 실제 사용자 테스트와 Google Play 출시를 목표로 다듬고 있는 상용 Android 앱입니다.
-
----
-
-## Short Global Summary
-
-| Language | Summary |
-|---|---|
-| English | Private local AI for Android with local models, memory, voice, and API serving. |
-| 한국어 | 안드로이드에서 로컬 LLM, 장기기억, 음성 입력, API 서버를 제공하는 개인 AI 앱. |
-| 日本語 | AndroidでローカルLLM、長期メモリ、音声入力、APIサーバーを使える個人AIアプリ。 |
-| 简体中文 | 面向 Android 的本地 AI 应用，支持本地模型、长期记忆、语音输入和 API 服务。 |
-| 繁體中文 | Android 本地 AI 應用，支援本地模型、長期記憶、語音輸入與 API 服務。 |
-| Español | IA local privada para Android con modelos locales, memoria, voz y servidor API. |
-| Français | IA locale privée pour Android avec modèles locaux, mémoire, voix et serveur API. |
-| Deutsch | Private lokale KI für Android mit lokalen Modellen, Gedächtnis, Spracheingabe und API-Server. |
-| Português | IA local privada para Android com modelos locais, memória, voz e servidor de API. |
 
 ---
 
