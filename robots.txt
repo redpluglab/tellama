@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redpluglab.github.io/tellama/sitemap.xml
