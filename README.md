@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/redpluglab/tellama/releases/latest"><strong>Download test APK</strong></a>
+  <a href="https://github.com/redpluglab/tellama/releases/latest"><strong>Download v1.0.5 test APK</strong></a>
   ·
   <a href="https://redpluglab.github.io/tellama/">Product page</a>
   ·
@@ -46,6 +46,34 @@
   <img alt="API" src="https://img.shields.io/badge/API-Ollama_%2F_OpenAI-7C3AED?style=for-the-badge" />
   <img alt="Privacy" src="https://img.shields.io/badge/Privacy-No_Forced_Login-059669?style=for-the-badge" />
 </p>
+
+---
+
+## See Tellama
+
+Tellama is designed to feel like a real mobile product, not a developer demo. It keeps the first screen simple, makes model choice understandable, shows the active serving model in chat, and keeps privacy-sensitive controls visible.
+
+<table>
+  <tr>
+    <td width="20%"><img src="assets/screenshots/screenshot-01-onboarding.png" alt="Tellama onboarding screen" /></td>
+    <td width="20%"><img src="assets/screenshots/screenshot-02-home.png" alt="Tellama home dashboard" /></td>
+    <td width="20%"><img src="assets/screenshots/screenshot-03-chat.png" alt="Tellama local chat screen with sample English conversation" /></td>
+    <td width="20%"><img src="assets/screenshots/screenshot-04-models.png" alt="Tellama phone-ready model catalog" /></td>
+    <td width="20%"><img src="assets/screenshots/screenshot-05-settings.png" alt="Tellama settings screen with fast answer mode and language choices" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Onboarding</strong></td>
+    <td align="center"><strong>Workspace</strong></td>
+    <td align="center"><strong>Local Chat</strong></td>
+    <td align="center"><strong>Models</strong></td>
+    <td align="center"><strong>Settings</strong></td>
+  </tr>
+</table>
+
+Latest tester build: **Tellama v1.0.5**  
+APK: [`tellama-v1-0-5.apk`](https://github.com/redpluglab/tellama/releases/latest)
+
+> Public repository note: this repository contains the product README, GitHub Pages website, privacy policy, screenshots, and APK release assets only. The commercial Android application source code is maintained privately by redplug, Inc. and is not published here.
 
 ---
 
@@ -130,7 +158,7 @@ It brings together the pieces a real mobile AI product needs:
 
 Tellama is built for users who want control, privacy, and mobility. It is also built for developers who want an Android phone to act as a small local AI endpoint for tools, scripts, and experiments.
 
-> Public repository note: this repository contains the public product page, privacy documentation, and APK release assets. The commercial Android application source code is maintained privately by redplug, Inc.
+> Public repository note: this repository contains the public product page, privacy documentation, screenshots, and APK release assets. The commercial Android application source code is maintained privately by redplug, Inc.
 
 ---
 
@@ -288,7 +316,7 @@ Store project notes and preferences locally so your assistant can stay aligned w
 
 ## Test APK
 
-The current public test build is available from GitHub Releases:
+The current public test build is **Tellama v1.0.5** and is available from GitHub Releases:
 
 [Download the latest Tellama APK](https://github.com/redpluglab/tellama/releases/latest)
 
