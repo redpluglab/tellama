@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible Tellama app or public SDK problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Never include API keys, private prompts, model files, or personal data. Security issues belong in private vulnerability reporting."
+  - type: input
+    id: version
+    attributes:
+      label: Tellama version
+      placeholder: "1.1.4"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version
+      placeholder: "Device model, Android version, RAM"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Android app
+        - Ollama-compatible API
+        - OpenAI-compatible API
+        - Python SDK
+        - JavaScript SDK
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: "Describe the smallest reliable reproduction. Redact secrets."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: error
+    attributes:
+      label: Tellama error code
+      placeholder: "Example: AUTH_001 (leave blank if none)"

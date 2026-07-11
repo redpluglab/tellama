@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest an app workflow, API compatibility improvement, or SDK example
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Explain the user or integration problem before proposing an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed experience
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Area
+      options:
+        - Android app
+        - Ollama-compatible API
+        - OpenAI-compatible API
+        - Public SDK or example
+        - Device/model compatibility data
+        - Documentation
+    validations:
+      required: true
