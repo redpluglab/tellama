@@ -94,10 +94,13 @@ sdk/tests/run.sh
 ## What the Android app includes
 
 - Phone-aware GGUF model catalog, import, selection, deletion, and per-model generation controls
+- Resumable large-model downloads with storage reserve, trusted mirrors, SHA-256 checks, and GGUF validation
+- Safe loaded-model deletion that stops active serving, unloads native memory, and then reclaims storage
 - Local streaming chat with timestamps, slash commands, voice input, and user-controlled long-term memory
 - Workspace dashboard for serving readiness, measured chat speed, RAM, storage, battery, and thermal guidance
 - Authenticated Wi-Fi LAN serving with one-time API keys, permission scopes, rate limiting, foreground status, and automatic stop on Wi-Fi loss
 - In-app update download with SHA-256, package, version, and signing-certificate verification
+- 15-language resources with TalkBack, large-text, landscape, tablet-width, and RTL layout support
 
 ## Security boundary
 
