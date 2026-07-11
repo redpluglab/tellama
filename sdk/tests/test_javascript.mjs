@@ -41,4 +41,14 @@ for await (const chunk of client.openAIChat({
   messages: [{ role: "user", content: "hi" }],
 })) openai += chunk;
 assert.equal(openai, "openai works");
+
+for (const stream of [
+  () => client.ollamaChat({ model: "test-model", messages: [{ role: "user", content: "trigger-error" }] }),
+  () => client.openAIChat({ model: "test-model", messages: [{ role: "user", content: "trigger-error" }] }),
+]) {
+  await assert.rejects(
+    async () => { for await (const _chunk of stream()) { /* no-op */ } },
+    (error) => error instanceof TellamaError && error.code === "RUNTIME_006",
+  );
+}
 console.log("javascript-sdk: ok");

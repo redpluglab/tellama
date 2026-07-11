@@ -85,7 +85,7 @@ TELLAMA_URL="$TELLAMA_URL" TELLAMA_API_KEY="$TELLAMA_API_KEY" \
   node sdk/javascript/example.mjs
 ```
 
-The clients support model discovery, Ollama NDJSON chat streaming, OpenAI SSE chat streaming, timeouts, and structured Tellama errors. Run their contract suite with:
+The clients support model discovery, bounded generation options, Ollama NDJSON chat streaming, OpenAI SSE chat streaming, timeouts, and structured HTTP or stream errors. Run their contract suite with:
 
 ```bash
 sdk/tests/run.sh

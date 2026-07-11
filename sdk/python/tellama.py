@@ -53,15 +53,19 @@ class TellamaClient:
         self,
         model: str,
         messages: Sequence[dict[str, str]],
+        options: dict[str, Any] | None = None,
     ) -> Iterator[str]:
         """Yield visible text chunks from POST /api/chat (NDJSON)."""
         body = {"model": model, "messages": list(messages), "stream": True}
+        if options:
+            body["options"] = options
         with self._open("POST", "/api/chat", body) as response:
             for raw_line in response:
                 line = raw_line.decode("utf-8").strip()
                 if not line:
                     continue
                 payload = json.loads(line)
+                self._raise_stream_error(payload)
                 chunk = payload.get("message", {}).get("content", "")
                 if chunk:
                     yield chunk
@@ -72,9 +76,15 @@ class TellamaClient:
         self,
         model: str,
         messages: Sequence[dict[str, str]],
+        max_tokens: int | None = None,
+        temperature: float | None = None,
     ) -> Iterator[str]:
         """Yield text chunks from POST /v1/chat/completions (SSE)."""
         body = {"model": model, "messages": list(messages), "stream": True}
+        if max_tokens is not None:
+            body["max_tokens"] = max_tokens
+        if temperature is not None:
+            body["temperature"] = temperature
         with self._open("POST", "/v1/chat/completions", body) as response:
             for raw_line in response:
                 line = raw_line.decode("utf-8").strip()
@@ -84,6 +94,7 @@ class TellamaClient:
                 if data == "[DONE]":
                     return
                 payload = json.loads(data)
+                self._raise_stream_error(payload)
                 choices = payload.get("choices", [])
                 if choices:
                     chunk = choices[0].get("delta", {}).get("content", "")
@@ -117,6 +128,16 @@ class TellamaClient:
         return TellamaError(
             message=body.get("message") or "Tellama request failed",
             status=error.code,
+            code=body.get("code"),
+        )
+
+    @staticmethod
+    def _raise_stream_error(payload: dict[str, Any]) -> None:
+        body = payload.get("error")
+        if not isinstance(body, dict):
+            return
+        raise TellamaError(
+            message=body.get("message") or "Tellama stream failed",
             code=body.get("code"),
         )
 
