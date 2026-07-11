@@ -31,30 +31,35 @@ export class TellamaClient {
     return payload.models;
   }
 
-  async *ollamaChat({ model, messages }) {
+  async *ollamaChat({ model, messages, options = null }) {
     const response = await this.#request("/api/chat", {
       method: "POST",
-      body: JSON.stringify({ model, messages, stream: true }),
+      body: JSON.stringify({ model, messages, stream: true, ...(options ? { options } : {}) }),
     });
     for await (const line of responseLines(response, this.timeoutMs)) {
       if (!line) continue;
       const payload = JSON.parse(line);
+      raiseStreamError(payload);
       const content = payload.message?.content || payload.response || "";
       if (content) yield content;
       if (payload.done === true) return;
     }
   }
 
-  async *openAIChat({ model, messages }) {
+  async *openAIChat({ model, messages, maxTokens = null, temperature = null }) {
+    const body = { model, messages, stream: true };
+    if (maxTokens !== null) body.max_tokens = maxTokens;
+    if (temperature !== null) body.temperature = temperature;
     const response = await this.#request("/v1/chat/completions", {
       method: "POST",
-      body: JSON.stringify({ model, messages, stream: true }),
+      body: JSON.stringify(body),
     });
     for await (const line of responseLines(response, this.timeoutMs)) {
       if (!line.startsWith("data:")) continue;
       const data = line.slice(5).trim();
       if (data === "[DONE]") return;
       const payload = JSON.parse(data);
+      raiseStreamError(payload);
       const content = payload.choices?.[0]?.delta?.content || "";
       if (content) yield content;
     }
@@ -96,6 +101,15 @@ export class TellamaClient {
       clearTimeout(timer);
     }
   }
+}
+
+function raiseStreamError(payload) {
+  const body = payload?.error;
+  if (!body || typeof body !== "object") return;
+  throw new TellamaError(
+    body.message || "Tellama stream failed",
+    { code: body.code || null },
+  );
 }
 
 async function* responseLines(response, timeoutMs) {

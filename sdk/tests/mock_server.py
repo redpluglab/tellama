@@ -32,18 +32,24 @@ class Handler(BaseHTTPRequestHandler):
             self._error(404, "MODEL_001", "Model not found")
             return
         if self.path == "/api/chat":
-            payload = (
-                '{"message":{"role":"assistant","content":"hello "},"done":false}\n'
-                '{"message":{"role":"assistant","content":"world"},"done":false}\n'
-                '{"message":{"role":"assistant","content":""},"done":true}\n'
-            ).encode()
+            if self._triggers_stream_error(body):
+                payload = self._stream_error().encode()
+            else:
+                payload = (
+                    '{"message":{"role":"assistant","content":"hello "},"done":false}\n'
+                    '{"message":{"role":"assistant","content":"world"},"done":false}\n'
+                    '{"message":{"role":"assistant","content":""},"done":true}\n'
+                ).encode()
             self._raw(200, "application/x-ndjson", payload)
         elif self.path == "/v1/chat/completions":
-            payload = (
-                'data: {"choices":[{"delta":{"content":"openai "}}]}\n\n'
-                'data: {"choices":[{"delta":{"content":"works"}}]}\n\n'
-                'data: [DONE]\n\n'
-            ).encode()
+            if self._triggers_stream_error(body):
+                payload = f"data: {self._stream_error()}\n\n".encode()
+            else:
+                payload = (
+                    'data: {"choices":[{"delta":{"content":"openai "}}]}\n\n'
+                    'data: {"choices":[{"delta":{"content":"works"}}]}\n\n'
+                    'data: [DONE]\n\n'
+                ).encode()
             self._raw(200, "text/event-stream", payload)
         else:
             self._error(404, "SERVER_002", "Not found")
@@ -69,6 +75,14 @@ class Handler(BaseHTTPRequestHandler):
 
     def _error(self, status, code, message):
         self._json(status, {"error": {"code": code, "message": message, "type": "request_failed", "actions": []}})
+
+    @staticmethod
+    def _triggers_stream_error(body):
+        return any(message.get("content") == "trigger-error" for message in body.get("messages", []))
+
+    @staticmethod
+    def _stream_error():
+        return json.dumps({"error": {"code": "RUNTIME_006", "message": "Generation failed"}})
 
     def _raw(self, status, content_type, payload):
         self.send_response(status)

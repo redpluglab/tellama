@@ -35,4 +35,10 @@ except TellamaError as error:
     assert error.code == "MODEL_001"
 assert "".join(client.ollama_chat("test-model", [{"role": "user", "content": "hi"}])) == "hello world"
 assert "".join(client.openai_chat("test-model", [{"role": "user", "content": "hi"}])) == "openai works"
+for stream in (client.ollama_chat, client.openai_chat):
+    try:
+        list(stream("test-model", [{"role": "user", "content": "trigger-error"}]))
+        raise AssertionError("stream error unexpectedly succeeded")
+    except TellamaError as error:
+        assert error.code == "RUNTIME_006"
 print("python-sdk: ok")

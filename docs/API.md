@@ -48,6 +48,8 @@ curl "$TELLAMA_URL/api/chat" \
 
 Each response line is a JSON object. Text appears in `message.content`; the final object has `done: true`.
 
+Optional Ollama generation controls are accepted in `options`: `num_predict` (1–4096), `temperature` (0–2), `top_p` (0.05–1), and `top_k` (1–200).
+
 ## OpenAI chat stream
 
 ```bash
@@ -62,6 +64,8 @@ curl -N "$TELLAMA_URL/v1/chat/completions" \
 ```
 
 Tellama sends `data: {json}` SSE events and terminates with `data: [DONE]`.
+
+OpenAI requests accept `max_tokens` or `max_completion_tokens` (1–4096), `temperature` (0–2), and `top_p` (0.05–1).
 
 ## Errors
 
@@ -80,10 +84,14 @@ Non-success responses use an HTTP status and a structured body:
 
 Common statuses include `400` for invalid requests, `401` for missing or invalid credentials, `403` for insufficient permission, `404` for unknown models, `429` for rate limiting, and `503` when the local runtime cannot serve the request.
 
+Generation errors that occur after streaming headers are sent use the same error envelope as an NDJSON line or SSE `data:` event. SDK clients raise a structured `TellamaError` for these events.
+
 ## Current limitations
 
 - Chat completions are streaming-only in the current compatibility layer.
+- Requests that explicitly set `stream: false` are rejected with `400` instead of returning an unexpected streaming body.
 - Tool calls, embeddings, image inputs, model upload/pull, and model deletion are not exposed through the API.
 - The server handles one local runtime workload conservatively; concurrent generation may return a runtime-busy error.
+- Request bodies are limited to 256 KiB. Chat requests accept up to 64 text-only `system`, `user`, or `assistant` messages and preserve their conversation history.
 - Performance depends on the Android device, selected quantization, available RAM, context, battery, and temperature.
 - Wi-Fi LAN is intended for trusted local networks only. TLS termination and public-internet exposure are outside Tellama's supported boundary.

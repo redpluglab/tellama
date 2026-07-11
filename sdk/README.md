@@ -35,4 +35,6 @@ for await (const chunk of client.ollamaChat({
 })) process.stdout.write(chunk);
 ```
 
+Generation controls can be supplied through Python `options={"num_predict": 64}` or JavaScript `options: { num_predict: 64 }`. OpenAI-style helpers accept `max_tokens`/`maxTokens` and `temperature`. Streamed server errors are raised as structured `TellamaError` instances.
+
 Run the contract tests with `tests/run.sh`. The public SDK and tests are licensed under Apache-2.0; they do not include Tellama Android application source code.
