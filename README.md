@@ -97,6 +97,7 @@ sdk/tests/run.sh
 - Resumable large-model downloads with storage reserve, trusted mirrors, SHA-256 checks, and GGUF validation
 - Safe loaded-model deletion that stops active serving, unloads native memory, and then reclaims storage
 - Local streaming chat with timestamps, slash commands, voice input, and user-controlled long-term memory
+- User-initiated HTTPS page summaries and comparisons with persistent sources and explicit approval before saving a result to memory
 - Workspace dashboard for serving readiness, measured chat speed, RAM, storage, battery, and thermal guidance
 - Authenticated Wi-Fi LAN serving with one-time API keys, permission scopes, rate limiting, foreground status, and automatic stop on Wi-Fi loss
 - In-app update download with SHA-256, package, version, and signing-certificate verification
@@ -110,6 +111,7 @@ sdk/tests/run.sh
 - Changing or losing Wi-Fi automatically stops the LAN server.
 - Do not expose port `11434` to the public internet or forward it from a router.
 - External API models have different privacy and billing conditions from Tellama's local server.
+- Web research makes direct HTTPS requests to the URLs you provide. Page text stays on the device when a local model is selected; with an external API model, that text is sent to the configured provider after an in-app warning.
 
 Report security issues through [SECURITY.md](SECURITY.md). Feature requests and SDK contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](docs/ROADMAP.md).
 
