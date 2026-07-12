@@ -5,8 +5,8 @@
 <h1 align="center">Tellama</h1>
 
 <p align="center">
-  <strong>Run Ollama-compatible local AI on your Android phone.</strong><br />
-  Download a GGUF model, start the Wi-Fi server, and let your PC or agent use your phone as a private AI endpoint.
+  <strong>Turn your Android phone into a private, Ollama-compatible AI server.</strong><br />
+  Run GGUF models on-device. Chat locally. Connect your PC, scripts, and agents through a small authenticated API.
 </p>
 
 <p align="center">
@@ -19,24 +19,37 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-1-8"><img alt="Latest release v1.1.8" src="https://img.shields.io/badge/release-v1.1.8-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
 </p>
 
-## Android phone → local AI server
+## Your phone. Your model. Your endpoint.
 
 <p align="center">
-  <img src="assets/screenshots/screenshot-06-server.png" width="360" alt="Tellama Wi-Fi LAN server running on an Android phone" />
+  <img src="assets/screenshots/screenshot-02-home.png" width="180" alt="Tellama workspace dashboard" />
+  <img src="assets/screenshots/screenshot-03-chat.png" width="180" alt="Tellama local AI chat" />
+  <img src="assets/screenshots/screenshot-04-models.png" width="180" alt="Tellama on-device model catalog" />
+  <img src="assets/screenshots/screenshot-06-server.png" width="180" alt="Tellama Ollama-compatible server" />
 </p>
 
-Tellama runs compatible GGUF models through a native Android runtime. Wi-Fi LAN mode exposes a deliberately small, authenticated API surface for trusted computers and agents.
+<p align="center">
+  <sub><strong>Workspace</strong> · <strong>Local chat</strong> · <strong>Model library</strong> · <strong>Private API server</strong></sub>
+</p>
+
+Tellama is more than another chat screen. It turns hardware you already own into a reusable local AI endpoint:
+
+- **Private by default:** compatible GGUF models, chats, and long-term memory stay on your device.
+- **Useful beyond the phone:** trusted computers and agents can call Ollama- and OpenAI-compatible routes over your Wi-Fi.
+- **Built for real devices:** model guidance, measured memory and thermal status, resumable downloads, and safe model unloading protect limited mobile resources.
+- **Lightweight research agent:** summarize or compare public HTTPS pages with persistent sources, then choose whether the result belongs in long-term memory.
 
 ```text
 Mac / PC / Agent  ── Ollama or OpenAI API ──▶  Android phone  ──▶  Local GGUF model
 ```
 
-The Android application remains commercially licensed and its complete source is private. The API clients, examples, and compatibility tests in [`sdk/`](sdk/) are real open-source code under Apache-2.0.
+The Android app is commercially licensed and its complete source remains private. The working Python and JavaScript clients, examples, and compatibility tests in [`sdk/`](sdk/) are open source under Apache-2.0.
 
 ## Quick start
 
