@@ -19,7 +19,7 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
-  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-1-8"><img alt="Latest release v1.1.8" src="https://img.shields.io/badge/release-v1.1.8-84A832" /></a>
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-1-9"><img alt="Latest release v1.1.9" src="https://img.shields.io/badge/release-v1.1.9-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
@@ -113,7 +113,7 @@ sdk/tests/run.sh
 - User-initiated HTTPS page summaries and comparisons with persistent sources and explicit approval before saving a result to memory
 - Workspace dashboard for serving readiness, measured chat speed, RAM, storage, battery, and thermal guidance
 - Authenticated Wi-Fi LAN serving with one-time API keys, permission scopes, rate limiting, foreground status, and automatic stop on Wi-Fi loss
-- In-app update download with SHA-256, package, version, and signing-certificate verification
+- Non-blocking startup update reminders plus in-app download with SHA-256, package, version, and signing-certificate verification
 - 15-language resources with TalkBack, large-text, landscape, tablet-width, and RTL layout support
 
 ## Security boundary
