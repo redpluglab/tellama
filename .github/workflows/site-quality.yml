@@ -1,0 +1,35 @@
+name: Site quality
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "404.html"
+      - "privacy/**"
+      - "assets/**"
+      - "scripts/site-check.mjs"
+      - ".github/workflows/site-quality.yml"
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "404.html"
+      - "privacy/**"
+      - "assets/**"
+      - "scripts/site-check.mjs"
+      - ".github/workflows/site-quality.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate pages, local links, translations, and privacy sections
+        run: node scripts/site-check.mjs

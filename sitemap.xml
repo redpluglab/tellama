@@ -3,19 +3,22 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://redpluglab.github.io/tellama/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://redpluglab.github.io/tellama/?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://redpluglab.github.io/tellama/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://redpluglab.github.io/tellama/?lang=ja"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://redpluglab.github.io/tellama/?lang=zh-cn"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-HK" href="https://redpluglab.github.io/tellama/?lang=zh-hk"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://redpluglab.github.io/tellama/"/>
   </url>
   <url>
     <loc>https://redpluglab.github.io/tellama/privacy/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://redpluglab.github.io/tellama/privacy/ko/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
