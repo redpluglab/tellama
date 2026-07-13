@@ -53,6 +53,8 @@ The Android app is commercially licensed and its complete source remains private
 
 ## Quick start
 
+> **Upgrading from v1.2.0 on Android 10:** install the signed v1.2.1 APK manually once from the release page. Android retains your Tellama data and models. In-app updates initiated by v1.2.1 and later use the physically qualified update path.
+
 1. Install the [latest APK](https://github.com/redpluglab/tellama/releases/latest).
 2. In **Models**, download and select a model that fits the phone.
 3. In **Server**, create an API key, choose **Wi-Fi LAN**, and start the server.
