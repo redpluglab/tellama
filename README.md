@@ -19,7 +19,7 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
-  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-2-1"><img alt="Latest release v1.2.1" src="https://img.shields.io/badge/release-v1.2.1-84A832" /></a>
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-2-2"><img alt="Latest release v1.2.2" src="https://img.shields.io/badge/release-v1.2.2-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
@@ -53,7 +53,7 @@ The Android app is commercially licensed and its complete source remains private
 
 ## Quick start
 
-> **Upgrading from v1.2.0 on Android 10:** install the signed v1.2.1 APK manually once from the release page. Android retains your Tellama data and models. In-app updates initiated by v1.2.1 and later use the physically qualified update path.
+> **Upgrading from v1.2.0 on Android 10:** install a signed v1.2.1-or-later APK manually once from the release page. Android retains your Tellama data and models. In-app updates initiated by v1.2.1 and later use the physically qualified update path.
 
 1. Install the [latest APK](https://github.com/redpluglab/tellama/releases/latest).
 2. In **Models**, download and select a model that fits the phone.
@@ -111,6 +111,7 @@ sdk/tests/run.sh
 - Phone-aware GGUF model catalog, import, selection, deletion, and per-model generation controls
 - Resumable large-model downloads with storage reserve, trusted mirrors, SHA-256 checks, and GGUF validation
 - Safe loaded-model deletion that stops active serving, unloads native memory, and then reclaims storage
+- Memory-aware model replacement that unloads the resident runtime before recalculating available RAM, reports selected/loading/ready states truthfully, and rolls back both selection and runtime after a failed load
 - Local streaming chat with timestamps, slash commands, voice input, and user-controlled long-term memory
 - User-initiated HTTPS page summaries and comparisons with persistent sources and explicit approval before saving a result to memory
 - Workspace dashboard for serving readiness, measured chat speed, RAM, storage, battery, and thermal guidance
