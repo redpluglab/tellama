@@ -11,6 +11,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://redpluglab.github.io/tellama/"/>
   </url>
   <url>
+    <loc>https://redpluglab.github.io/tellama/guide/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://redpluglab.github.io/tellama/guide/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://redpluglab.github.io/tellama/guide/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://redpluglab.github.io/tellama/guide/"/>
+  </url>
+  <url>
     <loc>https://redpluglab.github.io/tellama/privacy/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
