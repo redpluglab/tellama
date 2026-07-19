@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, normalize, relative, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
-const HTML_FILES = ["index.html", "404.html", "privacy/index.html", "privacy/ko/index.html"];
+const HTML_FILES = ["index.html", "404.html", "guide/index.html", "privacy/index.html", "privacy/ko/index.html"];
 const REQUIRED_FILES = [
   ...HTML_FILES,
   "assets/site.css",
