@@ -96,6 +96,7 @@
     releasedAt: "Published July 19, 2026",
     downloadApk: "Download APK directly",
     releaseNotes: "Release notes",
+    downloadQr: "Scan with your phone camera to download",
     shaLabel: "APK SHA-256",
     signerLabel: "Signing certificate SHA-256",
     upgradeTitle: "v1.2.0 users need one manual installation.",

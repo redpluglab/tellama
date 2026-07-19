@@ -812,3 +812,24 @@ a { color: inherit; }
   :root { --muted: #4f574d; --line: #aeb9aa; }
   .button { border-width: 2px; }
 }
+
+/* APK 다운로드 QR — release-links 내 배치 */
+.release-qr {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.release-qr img {
+  width: 132px;
+  height: 132px;
+  border-radius: 14px;
+  border: 1px solid rgba(32, 37, 31, 0.14);
+  background: #ffffff;
+}
+.release-qr figcaption {
+  font-size: 0.76rem;
+  color: #5a6157;
+  text-align: center;
+}
