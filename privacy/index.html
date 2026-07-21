@@ -204,17 +204,17 @@
 
   <h2>Data We Store on Your Device</h2>
   <p>Tellama stores chat sessions, prompts, responses, user-approved Memory items, installed or imported model metadata and checksums, local API client records, failure records, diagnostics, user settings, and optional local profile details locally on your Android device.</p>
-  <p>API keys are stored as SHA-256 hashes; the raw key is shown only once. Tellama uses an encrypted local database. Android backup is disabled for app data.</p>
+  <p>Local API server client keys are stored as SHA-256 hashes; the raw key is shown only once. Keys you enter for external providers are stored in Tellama's encrypted local database (not hashed) so Tellama can authenticate to the provider you chose. Android backup is disabled for app data.</p>
 
   <h2>Optional Profile and Product Updates</h2>
   <p>Tellama does not require an account for local use. You may optionally add a local display name, contact email, and profile photo in Settings. These profile details stay on your device unless you choose to share them.</p>
-  <p>If you enable product updates and tap "Request updates," Tellama opens your email app with a prefilled message to redplug. Sending that email is optional and user-initiated. redplug may use the email address you send to provide Tellama product updates, release information, account-related announcements, and future pricing or subscription information. You can request removal from update communications by contacting the address below.</p>
+  <p>The optional profile (display name, contact email, and photo) and the "product updates" preference are stored only in Tellama's private on-device storage. Tellama does not transmit your profile or email address anywhere, and there is no Tellama account. The "product updates" toggle is a local preference only.</p>
 
   <h2>Voice Input</h2>
   <p>Tellama requests microphone permission only when you use voice input. Voice recognition is handled by the Android system speech service installed on your device. Tellama does not store raw audio recordings. Recognized text is stored only if you send it as a chat message.</p>
 
   <h2>Network Use</h2>
-  <p>Tellama does not require an account for local use. Network access is used for user-initiated model downloads, release checks and app updates from GitHub, external API models configured by the user, web research against user-selected public HTTPS pages, optional email requests, Android system speech recognition when the installed speech service uses a network, and optional local API serving.</p>
+  <p>Tellama does not require an account for local use. Network access is used for user-initiated model downloads, release checks and app updates from GitHub, external API models configured by the user, web research against user-selected public HTTPS pages, Android system speech recognition when the installed speech service uses a network, and optional local API serving.</p>
   <p>The API server is off by default. Local Only mode binds to <code>127.0.0.1</code>. LAN mode requires explicit user action and API key authentication. Local LAN API traffic is not TLS-encrypted, so enable LAN mode only on networks you trust.</p>
   <p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers. Tellama does not automatically upload your optional local profile or profile photo.</p>
 
@@ -233,7 +233,7 @@
 
   <h2>Data Sharing</h2>
   <p>Tellama does not sell user data and does not share user data with advertising networks.</p>
-  <p>Data may leave the app when you explicitly use an external API model, run web research, download a model or app update, send a Tellama update request through your email app, share a redacted support report, use an Android speech service that processes audio or text remotely, or enable local API serving and connect your own clients.</p>
+  <p>Data may leave the app when you explicitly use an external API model, run web research, download a model or app update, share a redacted support report, use an Android speech service that processes audio or text remotely, or enable local API serving and connect your own clients.</p>
 
   <h2>Retention</h2>
   <p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of external API providers, GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider's policy before using that feature.</p>
