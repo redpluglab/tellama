@@ -211,7 +211,7 @@
   <p>The optional profile (display name, contact email, and photo) and the "product updates" preference are stored only in Tellama's private on-device storage. Tellama does not transmit your profile or email address anywhere, and there is no Tellama account. The "product updates" toggle is a local preference only.</p>
 
   <h2>Voice Input</h2>
-  <p>Tellama requests microphone permission only when you use voice input. Voice recognition is handled by the Android system speech service installed on your device. Tellama does not store raw audio recordings. Recognized text is stored only if you send it as a chat message.</p>
+  <p>Tellama does not request the microphone permission. Voice input launches the Android system speech recognizer, which captures and processes the audio on its own and returns only recognized text. Tellama never records or stores raw audio. Recognized text is stored only if you send it as a chat message.</p>
 
   <h2>Network Use</h2>
   <p>Tellama does not require an account for local use. Network access is used for user-initiated model downloads, release checks and app updates from GitHub, external API models configured by the user, web research against user-selected public HTTPS pages, Android system speech recognition when the installed speech service uses a network, and optional local API serving.</p>
@@ -239,7 +239,7 @@
   <p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of external API providers, GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider's policy before using that feature.</p>
 
   <h2>Data Deletion</h2>
-  <p>You can delete local Tellama data by clearing or editing your optional profile, resetting Memory in Tellama Settings, clearing Tellama storage in Android system settings, or uninstalling Tellama. Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete. If you previously sent an update opt-in email to redplug, contact the email address below to request removal from the update list.</p>
+  <p>You can delete local Tellama data by clearing or editing your optional profile, resetting Memory in Tellama Settings, clearing Tellama storage in Android system settings, or uninstalling Tellama. Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete.</p>
 
   <h2>Children</h2>
   <p>Tellama is intended for developers, local AI users, and general productivity use. It is not directed to children.</p>
