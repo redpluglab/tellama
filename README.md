@@ -19,7 +19,7 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
-  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-2"><img alt="Latest release v1.3.2" src="https://img.shields.io/badge/release-v1.3.2-84A832" /></a>
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-3"><img alt="Latest release v1.3.3" src="https://img.shields.io/badge/release-v1.3.3-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
