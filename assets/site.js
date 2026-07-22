@@ -87,7 +87,7 @@
     installTitle: "Start safely in three steps",
     installBody: "The current friend-testing build is delivered as a signed APK outside Google Play.",
     install1Title: "Get the latest APK",
-    install1Body: "Download tellama-v1-3-0.apk from the public release.",
+    install1Body: "Download tellama-v1-3-1.apk from the public release.",
     install2Title: "Allow Android installation",
     install2Body: "Allow Install unknown apps for this browser only, then complete the Play Protect scan.",
     install3Title: "Choose a model for your device",
