@@ -19,7 +19,7 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
-  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-6"><img alt="Latest release v1.3.6" src="https://img.shields.io/badge/release-v1.3.6-84A832" /></a>
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-7"><img alt="Latest release v1.3.7" src="https://img.shields.io/badge/release-v1.3.7-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
@@ -52,6 +52,10 @@ Mac / PC / Agent  ── Ollama or OpenAI API ──▶  Android phone  ──�
 The Android app is commercially licensed and its complete source remains private. The working Python and JavaScript clients, examples, and compatibility tests in [`sdk/`](sdk/) are open source under Apache-2.0.
 
 ## Quick start
+
+**v1.3.7:** Runtime 2.0 adds measured CPU tuning, isolated GPU acceleration on supported Adreno devices, and bundled offline multilingual semantic memory. The APK is now about **148 MB** because it includes the semantic-search model; a chat model is still selected separately. [Release notes](docs/releases/v1.3.7.md).
+
+Existing users can open Tellama to receive an update reminder, or use **Settings → App updates**. Checks are rate-limited, so a reminder may not appear immediately. Downloaded APKs are verified before Android asks you to approve installation; existing models, conversations, and memories are retained. This is an in-app reminder, not a push notification or a silent install.
 
 > **Upgrading from v1.2.0 on Android 10:** install a signed v1.2.1-or-later APK manually once from the release page. Android retains your Tellama data and models. In-app updates initiated by v1.2.1 and later use the physically qualified update path.
 
