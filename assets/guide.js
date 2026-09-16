@@ -46,9 +46,9 @@
     step1Kicker: "STEP 01",
     step1Title: "Install the APK",
     step1Lead: "Tellama is shared as a signed APK during friend-testing, so you install it once from the release page.",
-    step1a: "Open the release page and download the latest tellama-v1-2-8.apk.",
-    step1b: "When Android asks, allow “Install unknown apps” for your browser this one time.",
-    step1c: "Let Play Protect finish its scan, then tap Install.",
+    step1a: "Download the latest Tellama APK from the release page. Existing users should install it over the app without uninstalling.",
+    step1b: "When Android asks, allow “Install unknown apps” for the browser you are using.",
+    step1c: "Let Play Protect finish its scan, then tap Install or Update. After installation, you can turn off your browser’s “Install unknown apps” permission again.",
     step1Alt: "Sketch: a phone downloading the APK with the install-permission toggle turned on.",
 
     step2Kicker: "STEP 02",
