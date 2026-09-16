@@ -19,7 +19,7 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
-  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-7"><img alt="Latest release v1.3.7" src="https://img.shields.io/badge/release-v1.3.7-84A832" /></a>
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-8"><img alt="Latest release v1.3.8" src="https://img.shields.io/badge/release-v1.3.8-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
@@ -53,9 +53,9 @@ The Android app is commercially licensed and its complete source remains private
 
 ## Quick start
 
-**v1.3.7:** Runtime 2.0 adds measured CPU tuning, isolated GPU acceleration on supported Adreno devices, and bundled offline multilingual semantic memory. The APK is now about **148 MB** because it includes the semantic-search model; a chat model is still selected separately. [Release notes](docs/releases/v1.3.7.md).
+**v1.3.8:** Update downloads now preserve partial data and resume after interruptions, with verified HTTP ranges and visible background progress. Includes Runtime 2.0 CPU tuning, supported Adreno GPU acceleration and offline multilingual semantic memory. About **148 MB**; a chat model is selected separately. [Release notes](docs/releases/v1.3.8.md).
 
-**Slow update downloads:** The existing updater can restart from zero if Android stops a long-running download (observed after 30 minutes on Android 16). If this happens, download the release APK in your browser and install it over Tellama. **Do not uninstall the app**; an in-place update preserves its data. Resumable updater downloads are being addressed in a follow-up fix.
+**Updating from 1.3.7 or earlier:** The old updater can restart from zero if Android stops a long-running download (observed after 30 minutes on Android 16). If this happens, download the latest release APK in your browser and install it over Tellama. **Do not uninstall the app**. The resume fix takes effect after installing 1.3.8; it cannot change code already installed in an older app.
 
 Existing users can open Tellama to receive an update reminder, or use **Settings → App updates**. Checks are rate-limited, so a reminder may not appear immediately. Downloaded APKs are verified before Android asks you to approve installation; existing models, conversations, and memories are retained. This is an in-app reminder, not a push notification or a silent install.
 
