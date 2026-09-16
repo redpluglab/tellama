@@ -51,6 +51,40 @@ for (const file of HTML_FILES) {
 
 const indexHtml = readFileSync(join(ROOT, "index.html"), "utf8");
 const siteJs = readFileSync(join(ROOT, "assets/site.js"), "utf8");
+const releaseVersion = indexHtml.match(/"softwareVersion"\s*:\s*"(\d+\.\d+\.\d+)"/)?.[1];
+if (!releaseVersion) {
+  report("Homepage is missing a canonical release version");
+} else {
+  const releaseTag = `tellama-v${releaseVersion.replaceAll(".", "-")}`;
+  const expectedApk = `https://github.com/redpluglab/tellama/releases/download/${releaseTag}/${releaseTag}.apk`;
+  const apkLinks = Array.from(indexHtml.matchAll(/href=["']([^"']+\.apk)["']/g), match => match[1]);
+  if (!apkLinks.length || apkLinks.some(link => link !== expectedApk)) {
+    report("Homepage APK links do not match the current release version");
+  }
+  const notesPath = join(ROOT, `docs/releases/v${releaseVersion}.md`);
+  if (!existsSync(notesPath)) {
+    report(`Missing release notes for ${releaseVersion}`);
+  } else {
+    const notes = readFileSync(notesPath, "utf8");
+    const apkDigest = indexHtml.match(/data-i18n="shaLabel"[\s\S]*?<code>([a-f0-9]{64})<\/code>/)?.[1];
+    if (!apkDigest || !notes.includes(apkDigest)) report("Homepage APK digest differs from release notes");
+  }
+  for (const readme of ["README.md", "docs/README.ko.md"]) {
+    if (!readFileSync(join(ROOT, readme), "utf8").includes(`v${releaseVersion}`)) {
+      report(`${readme}: current release version is missing`);
+    }
+  }
+}
+const guideHtml = readFileSync(join(ROOT, "guide/index.html"), "utf8");
+const guideJs = readFileSync(join(ROOT, "assets/guide.js"), "utf8");
+if (/tellama-v\d+-\d+-\d+\.apk/.test(guideHtml + guideJs)) {
+  report("The installation guide should point to the latest release, not a stale APK filename");
+}
+const guideKeys = new Set(Array.from(guideHtml.matchAll(/data-i18n=["']([^"']+)["']/g), match => match[1]));
+for (const key of guideKeys) {
+  const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (!new RegExp(`\\n\\s*${escapedKey}:`).test(guideJs)) report(`Guide missing English translation: ${key}`);
+}
 const translationKeys = new Set(Array.from(indexHtml.matchAll(/data-i18n=["']([^"']+)["']/g), (match) => match[1]));
 for (const key of translationKeys) {
   const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
