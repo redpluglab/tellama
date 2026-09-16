@@ -55,6 +55,8 @@ The Android app is commercially licensed and its complete source remains private
 
 **v1.3.7:** Runtime 2.0 adds measured CPU tuning, isolated GPU acceleration on supported Adreno devices, and bundled offline multilingual semantic memory. The APK is now about **148 MB** because it includes the semantic-search model; a chat model is still selected separately. [Release notes](docs/releases/v1.3.7.md).
 
+**Slow update downloads:** The existing updater can restart from zero if Android stops a long-running download (observed after 30 minutes on Android 16). If this happens, download the release APK in your browser and install it over Tellama. **Do not uninstall the app**; an in-place update preserves its data. Resumable updater downloads are being addressed in a follow-up fix.
+
 Existing users can open Tellama to receive an update reminder, or use **Settings → App updates**. Checks are rate-limited, so a reminder may not appear immediately. Downloaded APKs are verified before Android asks you to approve installation; existing models, conversations, and memories are retained. This is an in-app reminder, not a push notification or a silent install.
 
 > **Upgrading from v1.2.0 on Android 10:** install a signed v1.2.1-or-later APK manually once from the release page. Android retains your Tellama data and models. In-app updates initiated by v1.2.1 and later use the physically qualified update path.
