@@ -306,6 +306,10 @@ a { color: inherit; }
 .hero h1 span, .hero h1 strong { display: block; }
 .hero h1 strong { color: #658f20; font-weight: 920; }
 
+html:lang(ko) .hero h1 { word-break: keep-all; text-wrap: balance; }
+html:lang(ko) :is(h2, h3) { word-break: keep-all; text-wrap: balance; }
+html:lang(ko) :is(p, small) { word-break: keep-all; }
+
 .hero-lead {
   max-width: 620px;
   margin: 25px 0 0;
@@ -422,7 +426,7 @@ a { color: inherit; }
 .screen-card figcaption { display: flex; flex-direction: column; gap: 3px; padding: 14px 5px 0; }
 .screen-card figcaption strong { font-size: 14px; }
 .screen-card figcaption span { color: var(--muted); font-size: 12px; }
-.swipe-hint { display: none; margin: 17px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+.swipe-hint { display: block; margin: 17px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
 
 .capability-section { background: var(--paper); }
 .capability-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -463,7 +467,7 @@ a { color: inherit; }
 .model-layout { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); align-items: center; gap: clamp(48px, 9vw, 120px); }
 .model-copy .eyebrow { margin-top: 0; }
 .model-scale { overflow: hidden; border: 1px solid #d6dfce; border-radius: 28px; background: rgba(255, 255, 255, 0.72); box-shadow: var(--shadow-sm); }
-.model-row { display: grid; grid-template-columns: 68px minmax(0, 1fr) minmax(100px, 160px); align-items: center; gap: 18px; padding: 25px 28px; }
+.model-row { display: grid; grid-template-columns: 68px minmax(0, 1fr); align-items: center; gap: 18px; padding: 25px 28px; }
 .model-row + .model-row { border-top: 1px solid #dce3d6; }
 .model-size { display: grid; width: 55px; height: 55px; place-items: center; border-radius: 17px; background: var(--ink); color: white; font-weight: 900; }
 .model-row div { display: flex; min-width: 0; flex-direction: column; }
@@ -702,10 +706,11 @@ a { color: inherit; }
     box-shadow: var(--shadow-lg);
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
     transform: translateY(-8px);
     transition: opacity 180ms ease, transform 180ms ease;
   }
-  .site-nav[data-open="true"] { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .site-nav[data-open="true"] { opacity: 1; pointer-events: auto; visibility: visible; transform: translateY(0); }
   .site-nav a { padding: 12px 14px; border-radius: 10px; }
   .site-nav a:hover { background: #f1f6e9; }
   .site-nav a::after { display: none; }

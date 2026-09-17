@@ -51,6 +51,14 @@ for (const file of HTML_FILES) {
 
 const indexHtml = readFileSync(join(ROOT, "index.html"), "utf8");
 const siteJs = readFileSync(join(ROOT, "assets/site.js"), "utf8");
+const siteCss = readFileSync(join(ROOT, "assets/site.css"), "utf8");
+if (!/\.site-nav\s*\{[^}]*visibility:\s*hidden/s.test(siteCss) ||
+    !/\.site-nav\[data-open="true"\]\s*\{[^}]*visibility:\s*visible/s.test(siteCss)) {
+  report("Collapsed mobile navigation must be hidden from focus/accessibility until opened");
+}
+if (!/html:lang\(ko\)\s+\.hero h1\s*\{[^}]*word-break:\s*keep-all/s.test(siteCss)) {
+  report("Korean hero headline must preserve word boundaries");
+}
 const releaseVersion = indexHtml.match(/"softwareVersion"\s*:\s*"(\d+\.\d+\.\d+)"/)?.[1];
 if (!releaseVersion) {
   report("Homepage is missing a canonical release version");
