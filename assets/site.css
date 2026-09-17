@@ -371,7 +371,6 @@ html:lang(ko) :is(p, small) { word-break: keep-all; }
 }
 
 .phone-frame img { display: block; width: 100%; height: auto; border-radius: 31px; }
-.phone-speaker { position: absolute; z-index: 3; top: 15px; left: 50%; width: 82px; height: 20px; border-radius: 20px; background: #181b18; transform: translateX(-50%); }
 
 .floating-card {
   position: absolute;
