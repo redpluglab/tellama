@@ -19,7 +19,7 @@
 
 <p align="center">
   <img alt="Android 10+" src="https://img.shields.io/badge/Android-10%2B-3DDC84?logo=android&logoColor=white" />
-  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-8"><img alt="Latest release v1.3.8" src="https://img.shields.io/badge/release-v1.3.8-84A832" /></a>
+  <a href="https://github.com/redpluglab/tellama/releases/tag/tellama-v1-3-9"><img alt="Latest release v1.3.9" src="https://img.shields.io/badge/release-v1.3.9-84A832" /></a>
   <img alt="Ollama compatible" src="https://img.shields.io/badge/API-Ollama_compatible-111827" />
   <img alt="OpenAI compatible" src="https://img.shields.io/badge/API-OpenAI_streaming-2563EB" />
   <img alt="SDK license" src="https://img.shields.io/badge/SDK-Apache--2.0-059669" />
@@ -28,9 +28,9 @@
 ## Your phone. Your model. Your endpoint.
 
 <p align="center">
-  <img src="assets/screenshots/screenshot-02-home.png" width="180" alt="Tellama workspace dashboard" />
-  <img src="assets/screenshots/screenshot-03-chat.png" width="180" alt="Tellama local AI chat" />
-  <img src="assets/screenshots/screenshot-04-models.png" width="180" alt="Tellama on-device model catalog" />
+  <img src="assets/screenshots/screenshot-02-home.png?v=1.3.9" width="180" alt="Tellama workspace dashboard" />
+  <img src="assets/screenshots/screenshot-03-chat.png?v=1.3.9" width="180" alt="Tellama local AI chat" />
+  <img src="assets/screenshots/screenshot-04-models.png?v=1.3.9" width="180" alt="Tellama on-device model catalog" />
   <img src="assets/screenshots/screenshot-06-server.png" width="180" alt="Tellama Ollama-compatible server" />
 </p>
 
@@ -53,7 +53,9 @@ The Android app is commercially licensed and its complete source remains private
 
 ## Quick start
 
-**v1.3.8:** Update downloads now preserve partial data and resume after interruptions, with verified HTTP ranges and visible background progress. Includes Runtime 2.0 CPU tuning, supported Adreno GPU acceleration and offline multilingual semantic memory. About **148 MB**; a chat model is selected separately. [Release notes](docs/releases/v1.3.8.md).
+**v1.3.9:** Separate installed/download model views, a qualified **TM Qwen3 4B Q4_K_M** distribution, explicit DEEP-mode consent, clearer serving/thermal errors and empty-response recovery. Includes Runtime 2.0 and resumable verified updates. About **148 MB**; the 2.59 GB chat model is downloaded separately. [Release notes](docs/releases/v1.3.9.md).
+
+TM qualification applies to the exact file on Galaxy Z Fold6, CPU / DEEP / 4,096 context / F16 KV: 54/55 checks, all critical checks passed. One Korean JSON city-name translation remains; some answers take over two minutes. This model is not qualified in FAST, GPU or on every phone. [Model, license and evidence](https://huggingface.co/LaraAI-Labs/tellama). Existing installed models are retained even if no longer recommended.
 
 **Updating from 1.3.7 or earlier:** The old updater can restart from zero if Android stops a long-running download (observed after 30 minutes on Android 16). If this happens, download the latest release APK in your browser and install it over Tellama. **Do not uninstall the app**. The resume fix takes effect after installing 1.3.8; it cannot change code already installed in an older app.
 
