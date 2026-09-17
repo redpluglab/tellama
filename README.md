@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/redpluglab/tellama/releases/latest"><strong>Download the Android APK</strong></a>
+  <a href="https://github.com/redpluglab/tellama/releases/download/tellama-v1-3-9/tellama-v1-3-9.apk"><strong>Download the Android APK · v1.3.9</strong></a>
   · <a href="docs/README.ko.md">한국어</a>
   · <a href="docs/API.md">API reference</a>
   · <a href="sdk/README.md">Open SDK</a>
@@ -53,6 +53,8 @@ The Android app is commercially licensed and its complete source remains private
 
 ## Quick start
 
+**Only the `.apk` file installs Tellama.** GitHub's “Source code (zip/tar.gz)” downloads contain this public website/SDK repository, not the Android installer or private app source. You do not need them. The APK checksum is in the [release notes](docs/releases/v1.3.9.md).
+
 **v1.3.9:** Separate installed/download model views, a qualified **TM Qwen3 4B Q4_K_M** distribution, explicit DEEP-mode consent, clearer serving/thermal errors and empty-response recovery. Includes Runtime 2.0 and resumable verified updates. About **148 MB**; the 2.59 GB chat model is downloaded separately. [Release notes](docs/releases/v1.3.9.md).
 
 TM qualification applies to the exact file on Galaxy Z Fold6, CPU / DEEP / 4,096 context / F16 KV: 54/55 checks, all critical checks passed. One Korean JSON city-name translation remains; some answers take over two minutes. This model is not qualified in FAST, GPU or on every phone. [Model, license and evidence](https://huggingface.co/LaraAI-Labs/tellama). Existing installed models are retained even if no longer recommended.
@@ -63,7 +65,7 @@ Existing users can open Tellama to receive an update reminder, or use **Settings
 
 > **Upgrading from v1.2.0 on Android 10:** install a signed v1.2.1-or-later APK manually once from the release page. Android retains your Tellama data and models. In-app updates initiated by v1.2.1 and later use the physically qualified update path.
 
-1. Install the [latest APK](https://github.com/redpluglab/tellama/releases/latest).
+1. Install the [v1.3.9 APK directly](https://github.com/redpluglab/tellama/releases/download/tellama-v1-3-9/tellama-v1-3-9.apk).
 2. In **Models**, download and select a model that fits the phone.
 3. In **Server**, create an API key, choose **Wi-Fi LAN**, and start the server.
 4. Export the values shown by Tellama:
