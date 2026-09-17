@@ -6,6 +6,10 @@ Tellama는 Android 기기에서 GGUF 모델을 실행하고, 같은 Wi-Fi의 신
 
 ## 빠른 시작
 
+**[Android APK 직접 다운로드 · v1.3.9](https://github.com/redpluglab/tellama/releases/download/tellama-v1-3-9/tellama-v1-3-9.apk)**
+
+설치에는 **`.apk` 파일 하나만** 필요합니다. GitHub의 `Source code (zip/tar.gz)`는 공개 홈페이지·SDK 저장소 압축파일이며, 앱 설치파일이나 비공개 Android 앱 소스가 아닙니다. 받지 않으셔도 됩니다. 검증용 체크섬은 [릴리스 문서](releases/v1.3.9.md)에 있습니다.
+
 **v1.3.9 모델 경험 개선:** 내 모델/모델 찾아보기 분리, 검증된 **TM Qwen3 4B Q4_K_M**, DEEP 전환 동의, 일관된 서빙·발열 안내와 빈 응답 복구를 제공합니다. Runtime 2.0과 검증된 업데이트 이어받기를 포함하며 APK는 약 **148 MB**, 대화 모델 2.59 GB는 별도 다운로드입니다. [릴리즈 노트](releases/v1.3.9.md).
 
 TM 승인은 정확히 해당 파일의 Fold6 CPU/DEEP/4,096문맥/F16 KV 검사에 한정합니다. 54/55개 및 모든 필수 검사를 통과했으며 한글 JSON 도시명 번역 1건, 2분 이상 걸릴 수 있는 응답은 남은 제한입니다. FAST·GPU·모든 휴대폰 성능을 보장하지 않습니다. [모델·라이선스·검증 근거](https://huggingface.co/LaraAI-Labs/tellama). 추천에서 제외된 기존 설치 모델도 삭제하지 않습니다.
@@ -14,7 +18,7 @@ TM 승인은 정확히 해당 파일의 Fold6 CPU/DEEP/4,096문맥/F16 KV 검사
 
 기존 사용자는 앱을 열면 새 버전 안내를 받을 수 있고, **설정 → 앱 업데이트**에서 직접 확인할 수도 있습니다. 자동 확인 간격 때문에 안내가 즉시 뜨지 않을 수 있습니다. APK 검증 후 Android 설치 승인이 필요하며 기존 모델·대화·기억은 유지됩니다. 앱 내부 안내이며 푸시 알림이나 무인 설치는 아닙니다.
 
-1. [최신 APK](https://github.com/redpluglab/tellama/releases/latest)를 설치합니다.
+1. [v1.3.9 APK를 바로 다운로드](https://github.com/redpluglab/tellama/releases/download/tellama-v1-3-9/tellama-v1-3-9.apk)하여 설치합니다.
 2. **모델**에서 기기에 맞는 GGUF 모델을 다운로드하고 서빙 모델로 선택합니다.
 3. **서버**에서 API 키를 만들고 **Wi-Fi LAN**을 선택한 뒤 서버를 시작합니다.
 4. 화면에 표시된 주소와 키를 환경 변수로 등록합니다.
