@@ -191,65 +191,89 @@
       <h1>Privacy Policy</h1>
       <p class="lead">Tellama is built around local AI on Android. Prompts, responses, chat history, Memory items, API keys, and diagnostics are designed to stay on the user's device unless the user explicitly chooses otherwise.</p>
       <div class="meta">
-        <span class="pill">Effective July 13, 2026</span>
+        <span class="pill">Effective October 2, 2026</span>
         <span class="pill">Android package: com.tellama.app</span>
         <span class="pill">No Tellama account required</span>
       </div>
     </header>
 
     <section class="content">
-      <div class="summary">
-        <strong>Plain-language summary:</strong> Tellama runs local AI models on your phone and does not send local-model prompts or responses to Tellama-controlled cloud servers. User-selected features—including external API models, web research, model and app downloads, Android system speech recognition, profile update requests, support report sharing, and local API serving—may involve network transmission or sharing. The relevant third party's terms apply when you use its service.
-      </div>
-
-  <h2>Data We Store on Your Device</h2>
-  <p>Tellama stores chat sessions, prompts, responses, user-approved Memory items, installed or imported model metadata and checksums, local API client records, failure records, diagnostics, user settings, and optional local profile details locally on your Android device.</p>
-  <p>Local API server client keys are stored as SHA-256 hashes; the raw key is shown only once. Keys you enter for external providers are stored in Tellama's encrypted local database (not hashed) so Tellama can authenticate to the provider you chose. Android backup is disabled for app data.</p>
-
-  <h2>Optional Profile and Product Updates</h2>
-  <p>Tellama does not require an account for local use. You may optionally add a local display name, contact email, and profile photo in Settings. These profile details stay on your device unless you choose to share them.</p>
-  <p>The optional profile (display name, contact email, and photo) and the "product updates" preference are stored only in Tellama's private on-device storage. Tellama does not transmit your profile or email address anywhere, and there is no Tellama account. The "product updates" toggle is a local preference only.</p>
-
-  <h2>Voice Input</h2>
-  <p>Tellama does not request the microphone permission. Voice input launches the Android system speech recognizer, which captures and processes the audio on its own and returns only recognized text. Tellama never records or stores raw audio. Recognized text is stored only if you send it as a chat message.</p>
-
-  <h2>Network Use</h2>
-  <p>Tellama does not require an account for local use. Network access is used for user-initiated model downloads, release checks and app updates from GitHub, external API models configured by the user, web research against user-selected public HTTPS pages, Android system speech recognition when the installed speech service uses a network, and optional local API serving.</p>
-  <p>The API server is off by default. Local Only mode binds to <code>127.0.0.1</code>. LAN mode requires explicit user action and API key authentication. Local LAN API traffic is not TLS-encrypted, so enable LAN mode only on networks you trust.</p>
-  <p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers. Tellama does not automatically upload your optional local profile or profile photo.</p>
-
-  <h2>External API Models</h2>
-  <p>If you add or select an OpenAI-compatible external API model, Tellama sends the prompt and context required for that request to the endpoint you configured. The external provider's privacy, retention, security, content, and billing terms apply. Tellama displays an in-app disclosure before external-model use. Remove the external model and its credentials to stop future use.</p>
-
-  <h2>Web Research</h2>
-  <p>Web research makes direct HTTPS requests to the public URL you provide. Tellama blocks unsupported schemes, local or private network targets, unsafe redirects, authentication paths, and oversized or unsupported responses. With a local model, fetched page text is processed on the device. With an external API model, the page text needed for summarization or comparison is sent to the configured provider after an in-app warning.</p>
-
-  <h2>Model Downloads and App Updates</h2>
-  <p>Model downloads connect to the selected third-party model host. The host receives ordinary request metadata such as your IP address and user-agent information. Tellama verifies supported model files before use.</p>
-  <p>Tellama may check the public GitHub release feed for a newer version. When you start an update, the APK is downloaded from GitHub and Tellama verifies its SHA-256 digest, package name, higher version, and signing certificate before opening Android's installer. GitHub's privacy terms apply to these requests.</p>
-
-  <h2>Support Reports</h2>
-  <p>Support reports are generated only when you choose to view or share them. Tellama redacts bearer tokens, API keys, and local filesystem paths before presenting support data.</p>
-
-  <h2>Data Sharing</h2>
-  <p>Tellama does not sell user data and does not share user data with advertising networks.</p>
-  <p>Data may leave the app when you explicitly use an external API model, run web research, download a model or app update, share a redacted support report, use an Android speech service that processes audio or text remotely, or enable local API serving and connect your own clients.</p>
-
-  <h2>Retention</h2>
-  <p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of external API providers, GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider's policy before using that feature.</p>
-
-  <h2>Data Deletion</h2>
-  <p>You can delete local Tellama data by clearing or editing your optional profile, resetting Memory in Tellama Settings, clearing Tellama storage in Android system settings, or uninstalling Tellama. Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete.</p>
-
-  <h2>Children</h2>
-  <p>Tellama is intended for developers, local AI users, and general productivity use. It is not directed to children.</p>
-
-  <h2>Changes</h2>
-  <p>If this policy changes, the updated version will be published at <a href="https://redpluglab.github.io/tellama/privacy/">https://redpluglab.github.io/tellama/privacy/</a>.</p>
-
-  <h2>Contact</h2>
-  <p>For privacy questions, contact <a href="mailto:challychoi@gmail.com">challychoi@gmail.com</a>.</p>
-      <p class="footer">This page is hosted publicly for Google Play and user transparency.</p>
+<p>Effective date: October 2, 2026</p>
+<p>Tellama is a local AI app for Android. It lets you import or download supported local model files, chat with models on your device, save user-approved Memory items, and optionally run a local API server.</p>
+<p>This policy applies to the Tellama Android app published as <code>com.tellama.app</code>.</p>
+<h2>Distribution Editions</h2>
+<p>The Google Play edition does not include the local API server or GitHub APK self-updates. Those features described below apply only to the direct-download edition. The Play edition accepts only HTTPS external API endpoints. Prompts, conversation context, relevant Memory and attached text may be sent to an external provider when you choose that provider.</p>
+<h2>Data We Store on Your Device</h2>
+<p>Tellama stores the following data locally on your Android device:</p>
+<ul>
+<li>Chat sessions, prompts, and responses.</li>
+<li>User-approved Memory items.</li>
+<li>Installed or imported model metadata and checksums.</li>
+<li>Local API server client keys are stored as SHA-256 hashes; the raw key is shown only once. Keys you enter for external providers are stored in the encrypted local database (not hashed) so Tellama can authenticate to the provider you chose.</li>
+<li>Failure records and diagnostics used for Safe Mode and support reports.</li>
+<li>User settings such as language, theme, and download preferences.</li>
+<li>Optional local profile details such as display name, contact email, update opt-in preference, and profile photo URI.</li>
+</ul>
+<p>Tellama uses an encrypted local database. Android backup is disabled for app data.</p>
+<h2>Optional Profile and Product Updates</h2>
+<p>Tellama does not require an account for local use. You may optionally add a local display name, contact email, and profile photo in Settings. These profile details stay on your device unless you choose to share them.</p>
+<p>The optional profile (display name, contact email, and photo) and the &quot;product updates&quot; preference are stored only in Tellama&#x27;s private on-device storage. Tellama does not transmit your profile or email address anywhere, and there is no Tellama account. The &quot;product updates&quot; toggle is a local preference only.</p>
+<h2>Voice Input</h2>
+<p>Tellama does not request the microphone permission. Voice input launches the Android system speech recognizer, which captures and processes the audio on its own and returns only recognized text. Tellama never records or stores raw audio. Recognized text is stored only if you send it as a chat message.</p>
+<h2>Network Use</h2>
+<p>Tellama does not require an account for local use.</p>
+<p>Tellama uses network access for:</p>
+<ul>
+<li>User-initiated model downloads from the selected model provider over HTTPS.</li>
+<li>Direct-download edition only: release checks and user-initiated APK downloads from GitHub.</li>
+<li>External OpenAI-compatible API models configured and selected by the user.</li>
+<li>Web research against user-selected public HTTPS pages.</li>
+<li>Android system speech recognition when the installed speech service uses a network.</li>
+<li>Direct-download edition only: optional local API serving.</li>
+</ul>
+<p>The API server is off by default. Local Only mode binds to <code>127.0.0.1</code>. Both Local Only and LAN modes require API key (Bearer) authentication so other apps on the same device cannot call Tellama without a key. LAN mode additionally requires explicit user action. Local LAN API traffic is not TLS-encrypted, so enable LAN mode only on networks you trust.</p>
+<p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers.</p>
+<p>Tellama does not automatically upload your optional local profile or profile photo.</p>
+<h2>External API Models</h2>
+<p>If you add or select an OpenAI-compatible external API model, Tellama sends the prompt and context required for that request to the endpoint you configured. The external provider&#x27;s privacy, retention, security, content, and billing terms apply. Tellama displays an in-app disclosure before external-model use. Remove the external model and its credentials to stop future use.</p>
+<h2>Web Research</h2>
+<p>Web research makes direct HTTPS requests to the public URL you provide. Tellama blocks unsupported schemes, local or private network targets, unsafe redirects, authentication paths, and oversized or unsupported responses.</p>
+<p>With a local model, fetched page text is processed on the device. With an external API model, the page text needed for summarization or comparison is sent to the configured provider after an in-app warning.</p>
+<h2>Model Downloads and App Updates</h2>
+<p>Model downloads connect to the selected third-party model host. The host receives ordinary request metadata such as your IP address and user-agent information. Tellama verifies supported model files before use.</p>
+<p>The direct-download edition may check the public GitHub release feed for a newer version. When you start an update, the APK is downloaded from GitHub and Tellama verifies its SHA-256 digest, package name, higher version, and signing certificate before opening Android&#x27;s installer. GitHub&#x27;s privacy terms apply to these requests.</p>
+<h2>Support Reports</h2>
+<p>Support reports are generated only when you choose to view or share them. Tellama redacts bearer tokens, API keys, and local filesystem paths before presenting support data.</p>
+<h2>Data Sharing</h2>
+<p>Tellama does not sell user data and does not share user data with advertising networks.</p>
+<p>Data may leave the app only when:</p>
+<ul>
+<li>You use an external API model, which sends the required prompt and context to the provider you configured.</li>
+<li>You run web research against a public HTTPS page. With an external API model, the fetched page text required for the request is also sent to that provider after an in-app warning.</li>
+<li>You download a model from a third-party model host or, in the direct-download edition, an app update from GitHub.</li>
+<li>You explicitly share a redacted support report through Android share targets.</li>
+<li>You use Android system speech recognition, which is controlled by your installed speech service and may process audio or text remotely.</li>
+<li>In the direct-download edition, you enable local API serving and connect your own local clients to the app.</li>
+</ul>
+<h2>Retention</h2>
+<p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of external API providers, GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider&#x27;s policy before using that feature.</p>
+<h2>Data Deletion</h2>
+<p>You can delete local Tellama data by:</p>
+<ul>
+<li>Clearing or editing your optional profile in Tellama Settings.</li>
+<li>Opening Tellama Settings and resetting Memory.</li>
+<li>Clearing Tellama storage in Android system settings.</li>
+<li>Uninstalling Tellama.</li>
+</ul>
+<p>Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete.</p>
+<h2>Children</h2>
+<p>Tellama is intended for developers, local AI users, and general productivity use. It is not directed to children.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the updated version will be published at:</p>
+<p>https://redpluglab.github.io/tellama/privacy/</p>
+<h2>Contact</h2>
+<p>For privacy questions, contact:</p>
+<p>challychoi@gmail.com</p>
     </section>
   </article>
 </main>
