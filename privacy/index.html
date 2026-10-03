@@ -243,7 +243,7 @@
 <p>Model downloads connect to the selected third-party model host. The host receives ordinary request metadata such as your IP address and user-agent information. Tellama verifies supported model files before use.</p>
 <p>The direct-download edition may check the public GitHub release feed for a newer version. When you start an update, the APK is downloaded from GitHub and Tellama verifies its SHA-256 digest, package name, higher version, and signing certificate before opening Android&#x27;s installer. GitHub&#x27;s privacy terms apply to these requests.</p>
 <h2>Support Reports</h2>
-<p>Support reports are generated only when you choose to view or share them. Tellama redacts bearer tokens, API keys, and local filesystem paths before presenting support data.</p>
+<p>Tellama generates and displays diagnostics locally in Settings. It redacts bearer tokens, API keys, and local filesystem paths before presenting support data. The current app does not upload diagnostics or include a support-report sharing action.</p>
 <h2>Data Sharing</h2>
 <p>Tellama does not sell user data and does not share user data with advertising networks.</p>
 <p>Data may leave the app only when:</p>
@@ -251,7 +251,7 @@
 <li>You use an external API model, which sends the required prompt and context to the provider you configured.</li>
 <li>You run web research against a public HTTPS page. With an external API model, the fetched page text required for the request is also sent to that provider after an in-app warning.</li>
 <li>You download a model from a third-party model host or, in the direct-download edition, an app update from GitHub.</li>
-<li>You explicitly share a redacted support report through Android share targets.</li>
+<li>You explicitly export a conversation and choose an Android share target. The exported text contains the visible messages, roles and timestamps; the selected app or service controls further handling.</li>
 <li>You use Android system speech recognition, which is controlled by your installed speech service and may process audio or text remotely.</li>
 <li>In the direct-download edition, you enable local API serving and connect your own local clients to the app.</li>
 </ul>
