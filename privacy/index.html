@@ -191,25 +191,25 @@
       <h1>Privacy Policy</h1>
       <p class="lead">Tellama is built around local AI on Android. Prompts, responses, chat history, Memory items, API keys, and diagnostics are designed to stay on the user's device unless the user explicitly chooses otherwise.</p>
       <div class="meta">
-        <span class="pill">Effective October 2, 2026</span>
+        <span class="pill">Effective October 4, 2026</span>
         <span class="pill">Android package: com.tellama.app</span>
         <span class="pill">No Tellama account required</span>
       </div>
     </header>
 
     <section class="content">
-<p>Effective date: October 2, 2026</p>
-<p>Tellama is a local AI app for Android. It lets you import or download supported local model files, chat with models on your device, save user-approved Memory items, and optionally run a local API server.</p>
+<p>Effective date: October 4, 2026</p>
+<p>Tellama is a local AI app for Android. It lets you download verified TM model files, chat with models on your device, save user-approved Memory items, and optionally run a local API server.</p>
 <p>This policy applies to the Tellama Android app published as <code>com.tellama.app</code>.</p>
 <h2>Distribution Editions</h2>
-<p>The Google Play edition does not include the local API server or GitHub APK self-updates. Those features described below apply only to the direct-download edition. The Play edition accepts only HTTPS external API endpoints. Prompts, conversation context, relevant Memory and attached text may be sent to an external provider when you choose that provider.</p>
+<p>The Google Play edition does not include the local API server or GitHub APK self-updates. Those features described below apply only to the direct-download edition. This release does not support external AI API connections or arbitrary model imports. Chat inference uses the verified TM models provided in the app catalog.</p>
 <h2>Data We Store on Your Device</h2>
 <p>Tellama stores the following data locally on your Android device:</p>
 <ul>
 <li>Chat sessions, prompts, and responses.</li>
 <li>User-approved Memory items.</li>
 <li>Installed or imported model metadata and checksums.</li>
-<li>Local API server client keys are stored as SHA-256 hashes; the raw key is shown only once. Keys you enter for external providers are stored in the encrypted local database (not hashed) so Tellama can authenticate to the provider you chose.</li>
+<li>Local API server client keys are stored as SHA-256 hashes; the raw key is shown only once. Legacy external-provider records from earlier versions remain in the encrypted local database but cannot be used to send requests in this release.</li>
 <li>Failure records and diagnostics used for Safe Mode and support reports.</li>
 <li>User settings such as language, theme, and download preferences.</li>
 <li>Optional local profile details such as display name, contact email, update opt-in preference, and profile photo URI.</li>
@@ -226,7 +226,6 @@
 <ul>
 <li>User-initiated model downloads from the selected model provider over HTTPS.</li>
 <li>Direct-download edition only: release checks and user-initiated APK downloads from GitHub.</li>
-<li>External OpenAI-compatible API models configured and selected by the user.</li>
 <li>Web research against user-selected public HTTPS pages.</li>
 <li>Android system speech recognition when the installed speech service uses a network.</li>
 <li>Direct-download edition only: optional local API serving.</li>
@@ -235,10 +234,10 @@
 <p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers.</p>
 <p>Tellama does not automatically upload your optional local profile or profile photo.</p>
 <h2>External API Models</h2>
-<p>If you add or select an OpenAI-compatible external API model, Tellama sends the prompt and context required for that request to the endpoint you configured. The external provider&#x27;s privacy, retention, security, content, and billing terms apply. Tellama displays an in-app disclosure before external-model use. Remove the external model and its credentials to stop future use.</p>
+<p>External AI API connections are unavailable in this release. Saved external selections and credentials cannot initiate network requests. Updating does not erase earlier local conversations, model files or settings.</p>
 <h2>Web Research</h2>
 <p>Web research makes direct HTTPS requests to the public URL you provide. Tellama blocks unsupported schemes, local or private network targets, unsafe redirects, authentication paths, and oversized or unsupported responses.</p>
-<p>With a local model, fetched page text is processed on the device. With an external API model, the page text needed for summarization or comparison is sent to the configured provider after an in-app warning.</p>
+<p>Fetched page text is processed on the device by a verified TM model.</p>
 <h2>Model Downloads and App Updates</h2>
 <p>Model downloads connect to the selected third-party model host. The host receives ordinary request metadata such as your IP address and user-agent information. Tellama verifies supported model files before use.</p>
 <p>The direct-download edition may check the public GitHub release feed for a newer version. When you start an update, the APK is downloaded from GitHub and Tellama verifies its SHA-256 digest, package name, higher version, and signing certificate before opening Android&#x27;s installer. GitHub&#x27;s privacy terms apply to these requests.</p>
@@ -248,15 +247,14 @@
 <p>Tellama does not sell user data and does not share user data with advertising networks.</p>
 <p>Data may leave the app only when:</p>
 <ul>
-<li>You use an external API model, which sends the required prompt and context to the provider you configured.</li>
-<li>You run web research against a public HTTPS page. With an external API model, the fetched page text required for the request is also sent to that provider after an in-app warning.</li>
+<li>You run web research against a public HTTPS page; the website receives your request and ordinary connection metadata.</li>
 <li>You download a model from a third-party model host or, in the direct-download edition, an app update from GitHub.</li>
 <li>You explicitly export a conversation and choose an Android share target. The exported text contains the visible messages, roles and timestamps; the selected app or service controls further handling.</li>
 <li>You use Android system speech recognition, which is controlled by your installed speech service and may process audio or text remotely.</li>
 <li>In the direct-download edition, you enable local API serving and connect your own local clients to the app.</li>
 </ul>
 <h2>Retention</h2>
-<p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of external API providers, GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider&#x27;s policy before using that feature.</p>
+<p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider&#x27;s policy before using that feature.</p>
 <h2>Data Deletion</h2>
 <p>You can delete local Tellama data by:</p>
 <ul>
@@ -270,11 +268,11 @@
 <p>Tellama is intended for developers, local AI users, and general productivity use. It is not directed to children.</p>
 <h2>Changes</h2>
 <p>If this policy changes, the updated version will be published at:</p>
-<p>https://redpluglab.github.io/tellama/privacy/</p>
+<p><a href="https://redpluglab.github.io/tellama/privacy/">Tellama Privacy Policy</a></p>
 <h2>Contact</h2>
 <p>For privacy questions, contact:</p>
 <p>challychoi@gmail.com</p>
-    </section>
+</section>
   </article>
 </main>
 </body>

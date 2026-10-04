@@ -142,7 +142,7 @@
     <aside class="privacy-notice" aria-label="개인정보 처리 안내">
       <div class="container notice-inner">
         <span class="notice-icon" aria-hidden="true">i</span>
-        <p><strong data-i18n="noticeTitle">정확한 개인정보 경계</strong> <span data-i18n="noticeBody">외부 API 모델이나 웹 리서치를 선택하면 사용자가 구성한 제공자 또는 URL로 데이터가 전송될 수 있습니다. Tellama는 전송 전에 앱 안에서 안내합니다.</span></p>
+        <p><strong data-i18n="noticeTitle">정확한 개인정보 경계</strong> <span data-i18n="noticeBody">이번 Play 출시에서는 검증된 TM 모델만 사용하며 외부 AI API 연결과 임의 모델 가져오기를 제공하지 않습니다. 웹 리서치·모델 다운로드·시스템 음성 인식·대화 공유는 네트워크나 다른 앱을 사용할 수 있습니다.</span></p>
         <a href="privacy/ko/" data-privacy-link data-i18n="privacyPolicy">개인정보 처리방침</a>
       </div>
     </aside>
@@ -222,11 +222,11 @@
           </article>
           <article>
             <span class="boundary-state boundary-choice" data-i18n="choiceBadge">USER CHOICE</span>
-            <div><h3 data-i18n="boundary2Title">외부 API 모델</h3><p data-i18n="boundary2Body">구성한 제공자의 개인정보·과금 조건이 적용되며, 입력 내용이 해당 제공자에게 전송됩니다.</p></div>
+            <div><h3 data-i18n="boundary2Title">Play 버전의 TM 모델</h3><p data-i18n="boundary2Body">검증된 TM 모델이 기기에서 대화를 처리합니다. 외부 AI API로 프롬프트를 보내지 않습니다.</p></div>
           </article>
           <article>
             <span class="boundary-state boundary-choice" data-i18n="choiceBadge">USER CHOICE</span>
-            <div><h3 data-i18n="boundary3Title">웹 리서치와 모델 다운로드</h3><p data-i18n="boundary3Body">선택한 공개 HTTPS URL과 모델 제공처에 직접 연결합니다. 외부 API 모델로 요약하면 페이지 내용도 해당 제공자에게 전송됩니다.</p></div>
+            <div><h3 data-i18n="boundary3Title">웹 리서치와 모델 다운로드</h3><p data-i18n="boundary3Body">선택한 공개 HTTPS URL과 모델 제공처에 직접 연결합니다. 가져온 페이지 내용은 기기의 TM 모델로 요약합니다.</p></div>
           </article>
         </div>
       </div>
@@ -242,7 +242,7 @@
         <div class="model-scale">
           <div class="model-row"><span class="model-size">TM</span><div><strong data-i18n="model1Title">TM Qwen3 4B · Q4_K_M</strong><small data-i18n="model1Body">Tellama 직접 양자화 · 약 2.59GB · 깊은 생각 모드</small></div></div>
           <div class="model-row"><span class="model-size">GGUF</span><div><strong data-i18n="model2Title">이미 설치한 모델은 그대로</strong><small data-i18n="model2Body">추천 목록이 바뀌어도 기존 모델·대화·기억은 삭제하지 않습니다.</small></div></div>
-          <div class="model-row"><span class="model-size">API</span><div><strong data-i18n="model3Title">직접 가져오기와 외부 API</strong><small data-i18n="model3Body">직접 선택한 모델은 별도 검증 대상이며, API에는 제공자의 개인정보·요금 조건이 적용됩니다.</small></div></div>
+          <div class="model-row"><span class="model-size">TM</span><div><strong data-i18n="model3Title">Play 버전은 검증된 TM만</strong><small data-i18n="model3Body">외부 AI API 연결과 임의 GGUF 가져오기는 이번 Play 출시에서 제외됩니다.</small></div></div>
         </div>
       </div>
     </section>
@@ -312,15 +312,15 @@
         <div class="faq-list">
           <details>
             <summary data-i18n="faq1Q">인터넷이 항상 필요한가요?</summary>
-            <p data-i18n="faq1A">설치된 로컬 모델과의 채팅은 오프라인으로 사용할 수 있습니다. 모델·앱 다운로드, 웹 리서치, 외부 API 모델은 네트워크가 필요합니다.</p>
+            <p data-i18n="faq1A">설치된 TM 모델과의 채팅은 오프라인으로 사용할 수 있습니다. 모델 다운로드, 웹 리서치와 시스템 음성 서비스는 네트워크를 사용할 수 있습니다. 앱 자체 업데이트는 직접 배포판 기능입니다.</p>
           </details>
           <details>
             <summary data-i18n="faq2Q">앱 업데이트는 안전한가요?</summary>
             <p data-i18n="faq2A">v1.2.1 이상은 APK의 SHA-256, 패키지명, 상위 버전과 서명 인증서를 검증한 뒤 Android 설치 화면을 엽니다.</p>
           </details>
           <details>
-            <summary data-i18n="faq3Q">외부 API 모델도 개인정보가 로컬에만 남나요?</summary>
-            <p data-i18n="faq3A">아닙니다. 외부 API 모델을 선택하면 입력과 필요한 문맥이 사용자가 구성한 제공자에게 전송되며 해당 제공자의 정책과 과금 조건이 적용됩니다.</p>
+            <summary data-i18n="faq3Q">Play 버전에서 외부 API를 연결할 수 있나요?</summary>
+            <p data-i18n="faq3A">이번 Play 출시에서는 외부 AI API 연결을 제공하지 않습니다. 기존 외부 설정이 남아 있어도 요청을 전송할 수 없습니다.</p>
           </details>
         </div>
       </div>
