@@ -191,14 +191,14 @@
       <h1>Privacy Policy</h1>
       <p class="lead">Tellama is built around local AI on Android. Prompts, responses, chat history, Memory items, API keys, and diagnostics are designed to stay on the user's device unless the user explicitly chooses otherwise.</p>
       <div class="meta">
-        <span class="pill">Effective October 4, 2026</span>
+        <span class="pill">Effective October 5, 2026</span>
         <span class="pill">Android package: com.tellama.app</span>
         <span class="pill">No Tellama account required</span>
       </div>
     </header>
 
     <section class="content">
-<p>Effective date: October 4, 2026</p>
+<p>Effective date: October 5, 2026</p>
 <p>Tellama is a local AI app for Android. It lets you download verified TM model files, chat with models on your device, save user-approved Memory items, and optionally run a local API server.</p>
 <p>This policy applies to the Tellama Android app published as <code>com.tellama.app</code>.</p>
 <h2>Distribution Editions</h2>
@@ -208,7 +208,7 @@
 <ul>
 <li>Chat sessions, prompts, and responses.</li>
 <li>User-approved Memory items.</li>
-<li>Installed or imported model metadata and checksums.</li>
+<li>Installed verified TM model metadata and checksums, plus retained metadata from earlier versions.</li>
 <li>Local API server client keys are stored as SHA-256 hashes; the raw key is shown only once. Legacy external-provider records from earlier versions remain in the encrypted local database but cannot be used to send requests in this release.</li>
 <li>Failure records and diagnostics used for Safe Mode and support reports.</li>
 <li>User settings such as language, theme, and download preferences.</li>
@@ -217,7 +217,7 @@
 <p>Tellama uses an encrypted local database. Android backup is disabled for app data.</p>
 <h2>Optional Profile and Product Updates</h2>
 <p>Tellama does not require an account for local use. You may optionally add a local display name, contact email, and profile photo in Settings. These profile details stay on your device unless you choose to share them.</p>
-<p>The optional profile (display name, contact email, and photo) and the &quot;product updates&quot; preference are stored only in Tellama&#x27;s private on-device storage. Tellama does not transmit your profile or email address anywhere, and there is no Tellama account. The &quot;product updates&quot; toggle is a local preference only.</p>
+<p>The optional profile (display name, contact email, and photo) and the &quot;product updates&quot; preference are stored only in Tellama&#x27;s private on-device storage. Tellama does not automatically transmit these profile fields, and there is no Tellama account. The &quot;product updates&quot; toggle is a local preference only. If you type personal details into an optional report, the reviewed report text is transmitted when you submit it.</p>
 <h2>Voice Input</h2>
 <p>Tellama does not request the microphone permission. Voice input launches the Android system speech recognizer, which captures and processes the audio on its own and returns only recognized text. Tellama never records or stores raw audio. Recognized text is stored only if you send it as a chat message.</p>
 <h2>Network Use</h2>
@@ -225,14 +225,15 @@
 <p>Tellama uses network access for:</p>
 <ul>
 <li>User-initiated model downloads from the selected model provider over HTTPS.</li>
+<li>Optional AI response reports that you review, consent to, and submit over HTTPS.</li>
 <li>Direct-download edition only: release checks and user-initiated APK downloads from GitHub.</li>
 <li>Web research against user-selected public HTTPS pages.</li>
 <li>Android system speech recognition when the installed speech service uses a network.</li>
 <li>Direct-download edition only: optional local API serving.</li>
 </ul>
 <p>The API server is off by default. Local Only mode binds to <code>127.0.0.1</code>. Both Local Only and LAN modes require API key (Bearer) authentication so other apps on the same device cannot call Tellama without a key. LAN mode additionally requires explicit user action. Local LAN API traffic is not TLS-encrypted, so enable LAN mode only on networks you trust.</p>
-<p>Tellama does not send prompts, responses, chat history, Memory items, API keys, or voice transcripts to Tellama-controlled cloud servers.</p>
-<p>Tellama does not automatically upload your optional local profile or profile photo.</p>
+<p>Ordinary TM chat inference runs on your device. Tellama does not automatically upload your conversations, Memory items, API keys, or voice transcripts. When you explicitly submit an AI response report, the text you reviewed and the report fields described below are sent to our reporting service. Text that you include in that report may contain personal information; remove information you do not want to send.
+Tellama does not automatically upload your optional local profile or profile photo.</p>
 <h2>External API Models</h2>
 <p>External AI API connections are unavailable in this release. Saved external selections and credentials cannot initiate network requests. Updating does not erase earlier local conversations, model files or settings.</p>
 <h2>Web Research</h2>
@@ -241,12 +242,20 @@
 <h2>Model Downloads and App Updates</h2>
 <p>Model downloads connect to the selected third-party model host. The host receives ordinary request metadata such as your IP address and user-agent information. Tellama verifies supported model files before use.</p>
 <p>The direct-download edition may check the public GitHub release feed for a newer version. When you start an update, the APK is downloaded from GitHub and Tellama verifies its SHA-256 digest, package name, higher version, and signing certificate before opening Android&#x27;s installer. GitHub&#x27;s privacy terms apply to these requests.</p>
+<h2>Optional AI Response Reports</h2>
+<p>You can report a completed AI response from the chat screen. The report dialog lets you edit the selected visible response, choose a reason, and add an optional explanation. Consent is off initially, and submission is disabled until you consent. Editing the report resets consent. You can dismiss the draft without submitting it.</p>
+<p>After you consent and submit, Tellama sends the reviewed text, optional explanation, reason, a randomly generated report receipt ID, app version, language, and schema version. The app does not automatically attach other messages, hidden reasoning, your profile, Memory items, credentials, files, or diagnostics. The text you choose to submit can itself contain information from a conversation. No GitHub account is required.</p>
+<p>Cloudflare receives the report over HTTPS and relays it to a private GitHub repository used by the Tellama developer. Authorized readers of that repository can read submitted reports. The purpose is to review reported AI content and address safety or application problems. This implementation does not send reports to an advertising, analytics, or model-training pipeline.</p>
+<p>The response and explanation are stored in GitHub Issues. Cloudflare D1 stores a receipt ID, a hash of the submitted fields, processing state, issue number, and timestamps to prevent duplicate submission and reconcile interrupted requests. D1 does not store the report text or your IP address. A hash and receipt ID are not a promise of anonymity.</p>
+<p>Cloudflare receives ordinary connection metadata, including the source IP address, and the relay uses that IP for abuse limits. Worker application logs and traces are disabled in our deployment; the service providers may separately process network, security, or operational data. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare&#x27;s privacy policy</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub&#x27;s privacy statement</a>. These providers may process information outside your country; this service is not represented as Korea-only hosting.</p>
+<p>HTTPS protects the connection. Submitted reports are readable by the developer and authorized service providers; reporting is not end-to-end encrypted against them. Closing a report issue is not deletion of its content.</p>
 <h2>Support Reports</h2>
 <p>Tellama generates and displays diagnostics locally in Settings. It redacts bearer tokens, API keys, and local filesystem paths before presenting support data. The current app does not upload diagnostics or include a support-report sharing action.</p>
 <h2>Data Sharing</h2>
 <p>Tellama does not sell user data and does not share user data with advertising networks.</p>
-<p>Data may leave the app only when:</p>
+<p>Data may leave the app when:</p>
 <ul>
+<li>You explicitly consent to and submit an AI response report as described above.</li>
 <li>You run web research against a public HTTPS page; the website receives your request and ordinary connection metadata.</li>
 <li>You download a model from a third-party model host or, in the direct-download edition, an app update from GitHub.</li>
 <li>You explicitly export a conversation and choose an Android share target. The exported text contains the visible messages, roles and timestamps; the selected app or service controls further handling.</li>
@@ -254,7 +263,9 @@
 <li>In the direct-download edition, you enable local API serving and connect your own local clients to the app.</li>
 </ul>
 <h2>Retention</h2>
-<p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Tellama does not control the retention practices of GitHub, model hosts, website operators, email providers, or Android speech services; review the applicable provider&#x27;s policy before using that feature.</p>
+<p>Local data remains on your device until you delete it, clear Tellama storage, or uninstall the app. Submitted reports are separate server data and are not deleted by uninstalling Tellama.</p>
+<p>We retain submitted report content for no more than 90 days from receipt, and receipt metadata for no more than 180 days from receipt. Content may be deleted earlier after review or on a verified deletion request. Expiry deletion runs periodically, starting before these limits. The report support and deletion contact is <a href="mailto:support@redplug.co.kr">support@redplug.co.kr</a>. These periods apply to our active report records; provider backups and security records are described separately below.</p>
+<p>Our current Cloudflare Workers Free plan supports D1 recovery for up to seven days. Removed receipt metadata may therefore remain in recoverable database history for that window. This statement applies to D1 metadata, not GitHub report contents. See <a href="https://developers.cloudflare.com/d1/reference/time-travel/">Cloudflare D1 Time Travel</a>. GitHub and Cloudflare may retain data for their own operational or legal purposes under their policies; no fixed GitHub backup-erasure deadline has been verified. Other model hosts, website operators, email providers, and Android speech services apply their own policies.</p>
 <h2>Data Deletion</h2>
 <p>You can delete local Tellama data by:</p>
 <ul>
@@ -263,14 +274,17 @@
 <li>Clearing Tellama storage in Android system settings.</li>
 <li>Uninstalling Tellama.</li>
 </ul>
-<p>Because Tellama does not require a Tellama account or run a Tellama cloud account service, there is no server-side account data to delete.</p>
+<p>Tellama does not require a Tellama account, but an explicitly submitted report is server data. Deleting the local chat or uninstalling the app does not delete that report.</p>
+<p>To request report deletion, contact <a href="mailto:support@redplug.co.kr">support@redplug.co.kr</a> and include the report receipt ID displayed after submission. Do not resend the report text or credentials. We use the receipt ID to locate and verify the exact report, delete its GitHub issue, and retain only the receipt metadata for the remaining period stated above. Deleting that content does not delete other local chats. Email requests are handled by the email provider separately.</p>
 <h2>Children</h2>
 <p>Tellama is intended for developers, local AI users, and general productivity use. It is not directed to children.</p>
 <h2>Changes</h2>
 <p>If this policy changes, the updated version will be published at:</p>
-<p><a href="https://redpluglab.github.io/tellama/privacy/">Tellama Privacy Policy</a></p>
+<p>https://redpluglab.github.io/tellama/privacy/</p>
 <h2>Contact</h2>
-<p>For privacy questions, contact:</p>
+<p>For AI response reports and report deletion requests, contact:</p>
+<p><a href="mailto:support@redplug.co.kr">support@redplug.co.kr</a></p>
+<p>For other privacy questions, the existing contact remains:</p>
 <p>challychoi@gmail.com</p>
 </section>
   </article>
